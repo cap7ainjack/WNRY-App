@@ -8,15 +8,16 @@ import { SettingsComponent }    from './settings/settings.component';
 import { AuthGuard } from '../auth.guard';
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
+ // tslint:disable:indent
   {
-      path: 'dashboard',
+    path: 'dashboard',
       component: RootComponent, canActivate: [AuthGuard],
 
-      children: [      
+      children: [
        { path: '', component: HomeComponent },
        { path: 'home',  component: HomeComponent },
        { path: 'settings',  component: SettingsComponent },
-      ]       
-    }  
+      ]
+    }
 ]);
 
