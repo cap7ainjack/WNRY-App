@@ -1,0 +1,8 @@
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\bin\Debug\netcoreapp2.1\WNRY.Models.deps.json
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\bin\Debug\netcoreapp2.1\WNRY.Models.dll
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.csproj.CoreCompileInputs.cache
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.AssemblyInfoInputs.cache
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.AssemblyInfo.cs
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.dll
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.pdb

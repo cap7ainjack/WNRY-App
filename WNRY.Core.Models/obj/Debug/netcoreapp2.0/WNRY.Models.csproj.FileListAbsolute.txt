@@ -1,0 +1,20 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\WNRY.Models.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\WNRY.Models.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\WNRY.Models.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\bin\Debug\netcoreapp2.0\Microsoft.IdentityModel.Tokens.xml
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.csproj.CopyComplete
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.csproj.CoreCompileInputs.cache
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.AssemblyInfoInputs.cache
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.AssemblyInfo.cs
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\obj\Debug\netcoreapp2.0\WNRY.Models.csprojAssemblyReference.cache
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\bin\Debug\netcoreapp2.0\WNRY.Models.deps.json
+E:\projects\New folder\WNRY-App-master\WNRY.Core.Models\bin\Debug\netcoreapp2.0\WNRY.Models.dll

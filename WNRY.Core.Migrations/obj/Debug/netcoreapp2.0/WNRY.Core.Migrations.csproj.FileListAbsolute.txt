@@ -1,0 +1,9 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\bin\Debug\netcoreapp2.0\WNRY.Core.Migrations.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\bin\Debug\netcoreapp2.0\WNRY.Core.Migrations.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\bin\Debug\netcoreapp2.0\WNRY.Core.Migrations.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\obj\Debug\netcoreapp2.0\WNRY.Core.Migrations.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\obj\Debug\netcoreapp2.0\WNRY.Core.Migrations.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\obj\Debug\netcoreapp2.0\WNRY.Core.Migrations.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\obj\Debug\netcoreapp2.0\WNRY.Core.Migrations.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\obj\Debug\netcoreapp2.0\WNRY.Core.Migrations.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.Core.Migrations\obj\Debug\netcoreapp2.0\WNRY.Core.Migrations.csprojResolveAssemblyReference.cache

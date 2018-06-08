@@ -1,0 +1,40 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.runtimeconfig.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.runtimeconfig.dev.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Core.Data.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Migrations.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Core.Data.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Migrations.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Models.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Models.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Services.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Services.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\WNRY\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.csproj.CopyComplete
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.deps.json
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.runtimeconfig.json
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.runtimeconfig.dev.json
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.dll
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.API.pdb
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Core.Data.dll
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Migrations.dll
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Models.dll
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Services.dll
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Core.Data.pdb
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Migrations.pdb
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Services.pdb
+E:\projects\New folder\WNRY-App-master\WNRY.API\bin\Debug\netcoreapp2.0\WNRY.Models.pdb
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.csprojAssemblyReference.cache
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.csproj.CoreCompileInputs.cache
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.AssemblyInfoInputs.cache
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.AssemblyInfo.cs
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.csproj.CopyComplete
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.dll
+E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.0\WNRY.API.pdb
