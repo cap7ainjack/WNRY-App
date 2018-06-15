@@ -1,7 +1,9 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 
 import { UserService } from '../shared/services/user.service';
+
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-header',
