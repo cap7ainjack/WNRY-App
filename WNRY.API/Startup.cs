@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -9,7 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Net;
 using System.Text;
+using System.Threading.Tasks;
+using WNRY.API.Utils;
 using WNRY.Core.Data;
 using WNRY.Models.IdentityModels;
 using WNRY.Services.Identity;
@@ -29,9 +34,9 @@ namespace WNRY.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add framework services.
             services.AddDbContext<WnryDbContext>(options =>
                                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                                             sqlServerOptionsAction => sqlServerOptionsAction.MigrationsAssembly("WNRY.Migrations")));
@@ -39,7 +44,7 @@ namespace WNRY.API
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
             // Register the ConfigurationBuilder instance of FacebookAuthSettings
-           // services.Configure<FacebookAuthSettings>(Configuration.GetSection(nameof(FacebookAuthSettings)));
+           //  services.Configure<FacebookAuthSettings>(Configuration.GetSection(nameof(FacebookAuthSettings)));
 
             services.TryAddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -89,45 +94,21 @@ namespace WNRY.API
                 options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
             });
 
-
-            services.AddIdentity<AppUser, IdentityRole>()
-                      .AddEntityFrameworkStores<WnryDbContext>()
-                      .AddDefaultTokenProviders();
-
-            services.Configure<IdentityOptions>(options =>
+            // add identity
+            var builder = services.AddIdentityCore<AppUser>(o =>
             {
-                // Password settings
-                options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 8;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
-                // options.Password.RequiredUniqueChars = 6;
-
-                // Lockout settings
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-                options.Lockout.MaxFailedAccessAttempts = 10;
-                options.Lockout.AllowedForNewUsers = true;
-
-                // User settings
-                options.User.RequireUniqueEmail = true;
+                // configure identity options
+                o.Password.RequireDigit = false;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 6;
             });
+            builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
+            builder.AddEntityFrameworkStores<WnryDbContext>().AddDefaultTokenProviders();
 
-            services.ConfigureApplicationCookie(options =>
-            {
-                // Cookie settings
-                options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
-                options.LoginPath = "/Account/Login"; // If the LoginPath is not set here, ASP.NET Core will default to /Account/Login
-                options.LogoutPath = "/Account/Logout"; // If the LogoutPath is not set here, ASP.NET Core will default to /Account/Logout
-                options.AccessDeniedPath = "/Account/AccessDenied"; // If the AccessDeniedPath is not set here, ASP.NET Core will default to /Account/AccessDenied
-                options.SlidingExpiration = true;
-            });
-
-            // Add application services.
-            // services.AddTransient<IEmailSender, EmailSender>();
-
-            services.AddMvc();
+            //  services.AddAutoMapper();
+            services.AddMvc(); // .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -138,6 +119,27 @@ namespace WNRY.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseExceptionHandler(
+                builder =>
+                {
+                    builder.Run(
+                        async context =>
+                            {
+                                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+                                var error = context.Features.Get<IExceptionHandlerFeature>();
+                                if (error != null)
+                                {
+                                    context.Response.AddApplicationError(error.Error.Message);
+                                    await context.Response.WriteAsync(error.Error.Message).ConfigureAwait(false);
+                                }
+                            });
+                });
+
+            app.UseAuthentication();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }

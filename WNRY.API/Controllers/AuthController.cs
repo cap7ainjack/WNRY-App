@@ -37,13 +37,13 @@ namespace WNRY.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
+            ClaimsIdentity identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
             if (identity == null)
             {
                 return BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", ModelState));
             }
 
-            var jwt = await Tokens.GenerateJwt(identity, _jwtFactory, credentials.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
+            string jwt = await Tokens.GenerateJwt(identity, _jwtFactory, credentials.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
             return new OkObjectResult(jwt);
         }
 
@@ -53,7 +53,7 @@ namespace WNRY.API.Controllers
                 return await Task.FromResult<ClaimsIdentity>(null);
 
             // get the user to verifty
-            var userToVerify = await _userManager.FindByNameAsync(userName);
+            AppUser userToVerify = await _userManager.FindByNameAsync(userName);
 
             if (userToVerify == null) return await Task.FromResult<ClaimsIdentity>(null);
 

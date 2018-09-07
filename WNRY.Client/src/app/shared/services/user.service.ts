@@ -1,13 +1,14 @@
+
+import {map, catchError,  take } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { UserRegistration } from '../models/user-registration.interface';
 import { ConfigService } from '../utils/config.service';
 
 import {BaseService} from './base.service';
 
-import { Observable } from 'rxjs/Rx';
-import { BehaviorSubject } from 'rxjs/Rx';
+import { Observable ,  BehaviorSubject } from 'rxjs/Rx';
 
 // Add the RxJS Observable operators we need in this app.
 import '../../rxjs-operators';
@@ -25,7 +26,7 @@ export class UserService extends BaseService {
 
 	private loggedIn = false;
 
-	constructor(private http: Http, private configService: ConfigService) {
+	constructor(private http: HttpClient, private configService: ConfigService) {
 		super();
 		this.loggedIn = !!localStorage.getItem('auth_token');
 		// ?? not sure if this the best way to broadcast the status but seems to resolve issue on page refresh where auth status is lost in
@@ -34,33 +35,42 @@ export class UserService extends BaseService {
 		this.baseUrl = configService.getApiURI();
 	}
 
-	register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<UserRegistration> {
+	register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<any> {
 	let body = JSON.stringify({ email, password, firstName, lastName, location });
-	let headers = new Headers({ 'Content-Type': 'application/json' });
-	let options = new RequestOptions({ headers: headers });
+	let httpOptions = {
+		headers: new HttpHeaders({
+			'Content-Type':  'application/json'
+		})
+	}
 
-	return this.http.post(this.baseUrl + '/accounts', body, options)
-		.map(res => true)
-		.catch(this.handleError);
+	return this.http.post(this.baseUrl + '/accounts', body, httpOptions)
+		.pipe(
+		map(res => true),
+		catchError(this.handleError));
 	}
 
 	login(userName, password) {
-		let headers = new Headers();
-		headers.append('Content-Type', 'application/json');
+		let httpOptions = {
+		headers: new HttpHeaders({
+			'Content-Type':  'application/json'
+		})
+	}
 
 		return this.http
 			.post(
 			this.baseUrl + '/auth/login',
-			JSON.stringify({ userName, password }), { headers }
-			)
-			.map(res => res.json())
-			.map(res => {
-			localStorage.setItem('auth_token', res.auth_token);
+			JSON.stringify({ userName, password }), httpOptions)
+			.pipe(
+			map((response: HttpResponse<any>) => {
+				let result = response;
+				if (result && result['auth_token']) {
+					localStorage.setItem('auth_token', result['auth_token']);
+				}
 			this.loggedIn = true;
 			this._authNavStatusSource.next(true);
 			return true;
-		})
-		.catch(this.handleError);
+		}),
+		catchError(this.handleError));
 	}
 
 	logout() {
@@ -74,19 +84,25 @@ export class UserService extends BaseService {
 	}
 
 	facebookLogin(accessToken: string) {
-		let headers = new Headers();
-		headers.append('Content-Type', 'application/json');
+		let httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type':  'application/json'
+			})
+		}
 		let body = JSON.stringify({ accessToken });
 		return this.http
 			.post(
-			this.baseUrl + '/externalauth/facebook', body, { headers })
-			.map(res => res.json())
-			.map(res => {
-			localStorage.setItem('auth_token', res.auth_token);
+			this.baseUrl + '/externalauth/facebook', body, httpOptions)
+			.pipe(
+			map((response: HttpResponse<any>) => {
+				let result = response;
+				if (result && result['auth_token']) {
+					localStorage.setItem('auth_token', result['auth_token']);
+				}
 			this.loggedIn = true;
 			this._authNavStatusSource.next(true);
 			return true;
-		})
-		.catch(this.handleError);
+		}),
+		catchError(this.handleError));
 	}
 }

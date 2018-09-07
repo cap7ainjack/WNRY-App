@@ -24,3 +24,26 @@ E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API
 E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cache
 E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cs
 E:\projects\New folder\WNRY-App-master\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorTargetAssemblyInfo.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.deps.json
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.runtimeconfig.json
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.runtimeconfig.dev.json
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Core.Data.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Migrations.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Models.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Services.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Core.Data.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Migrations.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Services.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csprojAssemblyReference.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cs
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.AssemblyInfo.cs
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorTargetAssemblyInfo.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csproj.CopyComplete
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.pdb

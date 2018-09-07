@@ -10,3 +10,15 @@ E:\projects\New folder\WNRY-App-master\WNRY.Services\obj\Debug\netcoreapp2.1\WNR
 E:\projects\New folder\WNRY-App-master\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.csproj.CopyComplete
 E:\projects\New folder\WNRY-App-master\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.dll
 E:\projects\New folder\WNRY-App-master\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\bin\Debug\netcoreapp2.1\WNRY.Services.deps.json
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\bin\Debug\netcoreapp2.1\WNRY.Services.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\bin\Debug\netcoreapp2.1\WNRY.Services.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\bin\Debug\netcoreapp2.1\WNRY.Models.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.csprojAssemblyReference.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.AssemblyInfo.cs
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.csproj.CopyComplete
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Services\obj\Debug\netcoreapp2.1\WNRY.Services.pdb

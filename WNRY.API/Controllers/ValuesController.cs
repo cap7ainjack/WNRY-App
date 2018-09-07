@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace WNRY.API.Controllers
 {
     [Route("api/[controller]")]
+    // [Authorize(Policy = "ApiUser")]
     public class ValuesController : Controller
     {
         // GET api/values
@@ -16,8 +19,10 @@ namespace WNRY.API.Controllers
             return new string[] { "value1", "value2" };
         }
 
+
         // GET api/values/5
         [HttpGet("{id}")]
+       // [Authorize(Policy = "ApiUser")]
         public string Get(int id)
         {
             return "value";

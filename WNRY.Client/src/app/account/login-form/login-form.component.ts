@@ -1,3 +1,5 @@
+
+import {finalize} from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -28,9 +30,9 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     // subscribe to router event
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
-         this.brandNew = param['brandNew'];   
-         this.credentials.email = param['email'];         
-      });      
+         this.brandNew = param['brandNew'];
+         this.credentials.email = param['email'];
+      });
   }
 
    ngOnDestroy() {
@@ -43,8 +45,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.isRequesting = true;
     this.errors='';
     if (valid) {
-      this.userService.login(value.email, value.password)
-        .finally(() => this.isRequesting = false)
+      this.userService.login(value.email, value.password).pipe(
+        finalize(() => this.isRequesting = false))
         .subscribe(
         result => {         
           if (result) {

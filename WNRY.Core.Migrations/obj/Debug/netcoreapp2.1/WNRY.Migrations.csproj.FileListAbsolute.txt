@@ -12,3 +12,17 @@ E:\projects\New folder\WNRY-App-master\WNRY.Core.Migrations\obj\Debug\netcoreapp
 E:\projects\New folder\WNRY-App-master\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csproj.CopyComplete
 E:\projects\New folder\WNRY-App-master\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.dll
 E:\projects\New folder\WNRY-App-master\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Migrations.deps.json
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Migrations.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Migrations.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Core.Data.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Models.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Core.Data.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csprojAssemblyReference.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.AssemblyInfo.cs
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csproj.CopyComplete
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.dll
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.pdb

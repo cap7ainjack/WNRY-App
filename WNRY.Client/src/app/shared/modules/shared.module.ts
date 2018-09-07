@@ -4,9 +4,9 @@
 // https://github.com/angular/angular/issues/10646  
 import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
- 
+
 import { myFocus } from '../../directives/focus.directive';
-import {SpinnerComponent} from '../../spinner/spinner.component';  
+import {SpinnerComponent} from '../../spinner/spinner.component';
 
 
 @NgModule({

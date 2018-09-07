@@ -2647,7 +2647,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.1.0": {
-      "sha512": "9z7l9s9V7MLx/LTjWdkdRKJLXPRwEMTE64Hq2e97upl6OfqSazlorWeWfEwc67Ow2xOlHdgyFm5SK16oRuOIyQ==",
+      "sha512": "K4RnCkmoglcEoIGLFDOirxDEctUaQiN5ZQmG4iH9j59GYPH10AjXaRSeU8PfBdI/1YdY4HrP8tgVwWlx/BV+tw==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.1.0",
       "files": [
@@ -7482,23 +7482,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Boyan\\.nuget\\packages\\": {},
+    "C:\\Users\\user\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\projects\\New folder\\WNRY-App-master\\WNRY.Core.Migrations\\WNRY.Migrations.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\WNRY\\WNRY-App\\WNRY.Core.Migrations\\WNRY.Migrations.csproj",
       "projectName": "WNRY.Migrations",
-      "projectPath": "E:\\projects\\New folder\\WNRY-App-master\\WNRY.Core.Migrations\\WNRY.Migrations.csproj",
-      "packagesPath": "C:\\Users\\Boyan\\.nuget\\packages\\",
-      "outputPath": "E:\\projects\\New folder\\WNRY-App-master\\WNRY.Core.Migrations\\obj\\",
+      "projectPath": "C:\\Users\\user\\Desktop\\WNRY\\WNRY-App\\WNRY.Core.Migrations\\WNRY.Migrations.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\WNRY\\WNRY-App\\WNRY.Core.Migrations\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Boyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7511,8 +7511,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\projects\\New folder\\WNRY-App-master\\WNRY.Core.Data\\WNRY.Core.Data.csproj": {
-              "projectPath": "E:\\projects\\New folder\\WNRY-App-master\\WNRY.Core.Data\\WNRY.Core.Data.csproj"
+            "C:\\Users\\user\\Desktop\\WNRY\\WNRY-App\\WNRY.Core.Data\\WNRY.Core.Data.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\WNRY\\WNRY-App\\WNRY.Core.Data\\WNRY.Core.Data.csproj"
             }
           }
         }

@@ -2,28 +2,30 @@ import { Component, OnInit } from '@angular/core';
 
 import { HomeDetails } from '../models/home.details.interface';
 import { DashboardService } from '../services/dashboard.service';
+import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  homeDetails: HomeDetails;
+	homeDetails: HomeDetails;
 
-  constructor(private dashboardService: DashboardService) { }
+	constructor(private dashboardService: DashboardService) { }
 
-  ngOnInit() {
+	ngOnInit() {
 
-    this.dashboardService.getHomeDetails()
-    .subscribe((homeDetails: HomeDetails) => {
-      this.homeDetails = homeDetails;
-    },
-    error => {
-      //this.notificationService.printErrorMessage(error);
-    });
-    
-  }
+		this.dashboardService.getHomeDetails()
+		.pipe(take(1))
+		.subscribe((homeDetails: HomeDetails) => {
+			this.homeDetails = homeDetails;
+		},
+		error => {
+			// this.notificationService.printErrorMessage(error);
+		});
+
+	}
 
 }

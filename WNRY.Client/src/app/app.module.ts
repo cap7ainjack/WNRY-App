@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
-import { HttpModule, XHRBackend } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { XHRBackend } from '@angular/http';
 import { AuthenticateXHRBackend } from './authenticate-xhr.backend';
+import { HttpClientModule } from '@angular/common/http';
 
 import { routing } from './app.routing';
 
@@ -29,7 +30,7 @@ import { ConfigService } from './shared/utils/config.service';
     DashboardModule,
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     routing
   ],
   providers: [ConfigService, { 

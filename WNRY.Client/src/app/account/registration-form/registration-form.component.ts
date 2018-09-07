@@ -1,3 +1,5 @@
+
+import {finalize} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -25,8 +27,8 @@ export class RegistrationFormComponent implements OnInit {
     this.errors = '';
     if (valid)
     {
-        this.userService.register(value.email, value.password, value.firstName, value.lastName, value.location)
-                  .finally(() => this.isRequesting = false)
+        this.userService.register(value.email, value.password, value.firstName, value.lastName, value.location).pipe(
+                  finalize(() => this.isRequesting = false))
                   .subscribe(
                     result  => {if (result) {
                         this.router.navigate(['/login'], {queryParams: {brandNew: true, email: value.email}});

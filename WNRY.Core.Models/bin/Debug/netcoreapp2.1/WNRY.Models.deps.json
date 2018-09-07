@@ -23,12 +23,18 @@
           "System.ComponentModel.Primitives": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard2.0/FluentValidation.dll": {}
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.6.100.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/2.1.0": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.1.0": {
@@ -36,7 +42,10 @@
           "Microsoft.AspNetCore.Cryptography.Internal": "2.1.0"
         },
         "runtime": {
-          "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
+          "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -64,7 +73,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/2.1.0": {
@@ -72,7 +84,10 @@
           "Microsoft.Extensions.Primitives": "2.1.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Binder/2.1.0": {
@@ -80,12 +95,18 @@
           "Microsoft.Extensions.Configuration": "2.1.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Identity.Core/2.1.0": {
@@ -96,7 +117,10 @@
           "System.ComponentModel.Annotations": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Identity.Stores/2.1.0": {
@@ -106,7 +130,10 @@
           "System.ComponentModel.Annotations": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Logging/2.1.0": {
@@ -117,12 +144,18 @@
           "Microsoft.Extensions.Options": "2.1.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/2.1.0": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Options/2.1.0": {
@@ -131,7 +164,10 @@
           "Microsoft.Extensions.Primitives": "2.1.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.Extensions.Primitives/2.1.0": {
@@ -140,7 +176,10 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       },
       "Microsoft.IdentityModel.Logging/5.2.2": {
@@ -151,7 +190,10 @@
           "System.IO.FileSystem": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll": {}
+          "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "5.2.2.0",
+            "fileVersion": "5.2.2.50423"
+          }
         }
       },
       "Microsoft.IdentityModel.Tokens/5.2.2": {
@@ -172,7 +214,10 @@
           "System.Threading": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
+          "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "5.2.2.0",
+            "fileVersion": "5.2.2.50423"
+          }
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -205,7 +250,10 @@
           "System.Xml.XmlDocument": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+          "lib/netstandard1.3/Newtonsoft.Json.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1.20720"
+          }
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -601,7 +649,10 @@
       "System.Runtime/4.3.0": {},
       "System.Runtime.CompilerServices.Unsafe/4.5.0": {
         "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "System.Runtime.Extensions/4.3.0": {
