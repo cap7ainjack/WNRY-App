@@ -6,10 +6,8 @@ import { ConfigService } from '../../shared/utils/config.service';
 
 import {BaseService} from '../../shared/services/base.service';
 
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 
-// Add the RxJS Observable operators we need in this app.
-import '../../rxjs-operators';
 
 @Injectable()
 
@@ -24,7 +22,7 @@ export class DashboardService extends BaseService {
 
 	getHomeDetails(): Observable<any> {
 		let authToken = localStorage.getItem('auth_token');
-
+		console.log(authToken);
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',

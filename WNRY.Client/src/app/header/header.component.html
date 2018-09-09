@@ -1,19 +1,27 @@
 <header>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
+  <nav>
+
+      <button mat-button [matMenuTriggerFor]="menu" class="mat-button">Начало</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+
+      <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a>
+      <button mat-button class="mat-button">За избата</button>
+      <button mat-button class="mat-button">Галерия</button>
+      <button mat-button class="mat-button">Контакти</button>
+
+      <a 
+        *ngIf="!status" 
+        style="float:right" 
+        mat-button class="mat-button" 
+        href="#" routerLinkActive="active" 
+        routerLink="/login"
+      >Вписване</a>
 
 
-  <button *ngIf="status" mat-button (click)="logout()">Logoff</button>
-
-  <button *ngIf="!status" mat-button [matMenuTriggerFor]="loginRegister">Login/Register</button>
-  <mat-menu #loginRegister="matMenu">
-    <button mat-menu-item routerLinkActive="active" routerLink="/register">Email signup</button>
-    <button mat-menu-item routerLinkActive="active" routerLink="/login">Email login</button>
-    <button mat-menu-item routerLinkActive="active" routerLink="/facebook-login">Facebook signup/login</button>
-  </mat-menu>
+      <button *ngIf="status" style="float:right" mat-button class="mat-button">Отписване</button>
 
   <!-- 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -46,4 +54,5 @@
                      
     </div>
   </nav>-->
+  </nav>
 </header>

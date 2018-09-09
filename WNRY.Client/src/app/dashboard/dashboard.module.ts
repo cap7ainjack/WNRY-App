@@ -13,14 +13,14 @@ import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    routing,
-    SharedModule
-  ],
-  declarations: [RootComponent,HomeComponent, SettingsComponent],
-  exports:      [ ],
-  providers:    [AuthGuard,DashboardService]
+	imports: [
+		CommonModule,
+		FormsModule,
+		routing,
+		SharedModule
+	],
+	declarations: [RootComponent, HomeComponent, SettingsComponent],
+	exports:      [ ],
+	providers:    [AuthGuard, DashboardService]
 })
 export class DashboardModule { }

@@ -6,12 +6,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { UserRegistration } from '../models/user-registration.interface';
 import { ConfigService } from '../utils/config.service';
 
-import {BaseService} from './base.service';
+import { BaseService } from './base.service';
 
-import { Observable ,  BehaviorSubject } from 'rxjs/Rx';
-
-// Add the RxJS Observable operators we need in this app.
-import '../../rxjs-operators';
+import { Observable ,  BehaviorSubject } from 'rxjs';
 
 @Injectable()
 

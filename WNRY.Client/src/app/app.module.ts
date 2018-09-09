@@ -16,22 +16,42 @@ import { HomeComponent } from './home/home.component';
 import { AccountModule }  from './account/account.module';
 /* Dashboard Imports */
 import { DashboardModule }  from './dashboard/dashboard.module';
+/* Shop Imports */
+import { ShopModule } from './shop/shop.module';
 
 import { ConfigService } from './shared/utils/config.service';
+
+/* angular material */
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CdkTableModule} from '@angular/cdk/table';
+import './polyfills';
+import 'hammerjs';
+
+import {MatMenuModule, MatIconModule, MatSidenavModule, MatButtonModule} from '@angular/material'
+
 // tslint:disable
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent      
+    HomeComponent
   ],
   imports: [
     AccountModule,
     DashboardModule,
+    ShopModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routing
+	  routing,
+
+	// angular mateial
+  BrowserAnimationsModule,
+  MatMenuModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatButtonModule
   ],
   providers: [ConfigService, { 
     provide: XHRBackend, 
@@ -40,3 +60,5 @@ import { ConfigService } from './shared/utils/config.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

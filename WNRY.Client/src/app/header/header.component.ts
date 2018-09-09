@@ -1,32 +1,32 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
-import {Subscription} from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { UserService } from '../shared/services/user.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+	selector: 'app-header',
+	templateUrl: './header.component.html',
+	styleUrls: ['./header.component.scss']
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
 
-  status: boolean;
- subscription: Subscription;
+	status: boolean;
+	subscription: Subscription;
 
-  constructor(private userService: UserService) {
-   }
+	constructor(private userService: UserService) {
+		}
 
-   logout() {
-     this.userService.logout();
-  }
+		logout() {
+			this.userService.logout();
+	}
 
-  ngOnInit() {
-    this.subscription = this.userService.authNavStatus$.subscribe(status => this.status = status);
-  }
+	ngOnInit() {
+		this.subscription = this.userService.authNavStatus$.subscribe(status => this.status = status);
+	}
 
-   ngOnDestroy() {
-    // prevent memory leak when component is destroyed
-    this.subscription.unsubscribe();
-  }
+		ngOnDestroy() {
+		// prevent memory leak when component is destroyed
+		this.subscription.unsubscribe();
+	}
 }

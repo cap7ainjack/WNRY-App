@@ -14,3 +14,4 @@ C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNR
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.AssemblyInfo.cs
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.dll
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.pdb
+C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.csprojAssemblyReference.cache

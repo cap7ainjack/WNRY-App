@@ -107,6 +107,8 @@ namespace WNRY.API
             builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
             builder.AddEntityFrameworkStores<WnryDbContext>().AddDefaultTokenProviders();
 
+            services.AddCors(options => options.AddPolicy("AllowAll", p =>
+                                    p.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader()));
             //  services.AddAutoMapper();
             services.AddMvc(); // .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
         }
@@ -136,6 +138,8 @@ namespace WNRY.API
                                 }
                             });
                 });
+
+            app.UseCors("AllowAll");
 
             app.UseAuthentication();
             app.UseDefaultFiles();
