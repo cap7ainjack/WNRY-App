@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="2:2">
+    <mat-grid-tile *ngFor="let item of products" >
+        <mat-card role="region" class="example-card">
+            <img class="card-image" mat-card-image [src]=item.img alt="Photo of a Shiba Inu">
+
+            <mat-card-content>
+                <p>{{item.name}}</p>
+                <p>${{item.price | number: '1.2-2'}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

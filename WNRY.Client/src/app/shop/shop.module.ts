@@ -12,6 +12,7 @@ import { DashboardService } from './services/dashboard.service';
 
 import { ShopHomeComponent } from './shop-home/shop-home.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AuthGuard } from '../auth.guard';
 
@@ -23,8 +24,9 @@ import {MatCardModule} from '@angular/material/card';
 		CommonModule,
 		FormsModule,
 		routing,
-        SharedModule,
-        MatCardModule
+				SharedModule,
+				MatCardModule,
+				MatGridListModule
 	],
 	declarations: [ShopHomeComponent, ProductListComponent/* RootComponent, HomeComponent, SettingsComponent */],
 	exports:      [ ],
