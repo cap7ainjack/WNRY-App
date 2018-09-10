@@ -1,27 +1,26 @@
-<header>
-  <nav>
 
-      <button mat-button [matMenuTriggerFor]="menu" class="mat-button">Начало</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
-      </mat-menu>
+<div class="navbar" >
 
-      <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a>
-      <button mat-button class="mat-button">За избата</button>
-      <button mat-button class="mat-button">Галерия</button>
-      <button mat-button class="mat-button">Контакти</button>
+    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/dashboard/home">Начало</a>
+    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a>
+    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/info">За избата</a>
+    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/gallery">Галерия</a>
+    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/contact">Контакти</a>
 
-      <a 
-        *ngIf="!status" 
-        style="float:right" 
-        mat-button class="mat-button" 
-        href="#" routerLinkActive="active" 
-        routerLink="/login"
-      >Вписване</a>
+        <a 
+          *ngIf="!status" 
+          style="float:right" 
+          mat-button class="mat-button" 
+          href="#" routerLinkActive="active" 
+          routerLink="/login"
+        >Вписване
+        </a>
+
+        <button *ngIf="status" style="float:right" mat-button class="mat-button">Отписване</button>
+
+  </div>
 
 
-      <button *ngIf="status" style="float:right" mat-button class="mat-button">Отписване</button>
 
   <!-- 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -54,5 +53,3 @@
                      
     </div>
   </nav>-->
-  </nav>
-</header>
