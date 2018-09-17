@@ -1,20 +1,23 @@
+
 /* The navigation bar */
 .navbar {
     overflow: hidden;
-    background-color: rgb(235, 235, 235);
-    position: fixed; /* Set the navbar to fixed position */
+    // background-color: rgb(235, 235, 235);
+    background-color: rgba(184, 8, 8, 0.63);
+    position: sticky; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%;
-    max-width: 1410px;
-    height: 8.5%;
-    z-index: 2;
+    max-width: 1400px;  
+    // transform: translateX(5px);
+    z-index: 1;
 }
 
 /* Links inside the navbar */
 .navbar a {
     float: left;
     display: block;
-    color: #B97F6D;
+    // color: #B97F6D;
+    color: rgb(252, 252, 252);
     font: bold;
     text-align: center;
     padding: 14px 16px;

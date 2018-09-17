@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+<div mat-dialog-content>
+  <img class="dialog-image" mat-card-image [src]=data.img>
+
+
+  <mat-form-field class="example-full-width">
+    <input #quantityNum matInput type="number"min="1" (blur)="checkValue()" [(ngModel)]="productQuantity">
+  </mat-form-field>
+
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.name">Add to Card</button>
+</div>

@@ -11,8 +11,13 @@ import { DashboardService } from './services/dashboard.service';
  */
 
 import { ShopHomeComponent } from './shop-home/shop-home.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductGridComponent } from './product-grid/product-grid.component';
+import { BuyProductDialogComponent } from './buy-product-dialog/buy-product-dialog.component';
+
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatInputModule } from '@angular/material/input'
 
 import { AuthGuard } from '../auth.guard';
 
@@ -26,10 +31,14 @@ import {MatCardModule} from '@angular/material/card';
 		routing,
 				SharedModule,
 				MatCardModule,
-				MatGridListModule
+				MatGridListModule,
+				MatButtonModule,
+				MatDialogModule,
+				MatInputModule
 	],
-	declarations: [ShopHomeComponent, ProductListComponent/* RootComponent, HomeComponent, SettingsComponent */],
+	declarations: [ShopHomeComponent, ProductGridComponent, BuyProductDialogComponent/* RootComponent, HomeComponent, SettingsComponent */],
 	exports:      [ ],
-	providers:    []
+	providers:    [],
+	entryComponents: [BuyProductDialogComponent]
 })
 export class ShopModule { }
