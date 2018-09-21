@@ -18,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatInputModule } from '@angular/material/input'
+import { MatIconModule } from '@angular/material/icon';
 
 import { AuthGuard } from '../auth.guard';
 
@@ -34,7 +35,8 @@ import {MatCardModule} from '@angular/material/card';
 				MatGridListModule,
 				MatButtonModule,
 				MatDialogModule,
-				MatInputModule
+				MatInputModule,
+				MatIconModule
 	],
 	declarations: [ShopHomeComponent, ProductGridComponent, BuyProductDialogComponent/* RootComponent, HomeComponent, SettingsComponent */],
 	exports:      [ ],

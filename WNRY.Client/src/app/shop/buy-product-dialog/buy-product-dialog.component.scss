@@ -1,3 +1,31 @@
-.dialog-image {
-    max-width: 400px;
-}
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.big-box {
+    // width: 200px;
+    // height: 150px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+
+    height: 500px; 
+    width: 400px;
+  }
+  
+  div > img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  div > button {
+    padding: 14px 100px; 
+    background-color: rgba(184, 8, 8, 0.973);
+    color: ivory;
+    display: inline-block;
+    left: 5%;
+  } 

@@ -18,9 +18,9 @@ export class ProductGridComponent implements OnInit {
 
 	buyProduct(item: ProductData) {
 		const dialogRef = this.dialog.open(BuyProductDialogComponent, {
-			height: '600px',
-			width: '800px',
-			data: {name: item.name, id: item.id, img: item.img}
+			maxHeight: '700px',
+			maxWidth: '800px',
+			data: {name: item.name, id: item.id, img: item.img, price: item.price }
 		});
 
 		dialogRef.afterClosed().subscribe(result => {

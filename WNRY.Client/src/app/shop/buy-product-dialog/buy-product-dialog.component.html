@@ -1,12 +1,60 @@
-<h1 mat-dialog-title>{{data.name}}</h1>
-<div mat-dialog-content>
-  <img class="dialog-image" mat-card-image [src]=data.img>
+<div class="container">
+  <div class="row">
+    <div class="col big-box">
+      <img style="display:inherit" [src]=data.img>
+    </div>
 
+    <div class="col">
 
-  <mat-form-field class="example-full-width">
-    <input #quantityNum matInput type="number"min="1" (blur)="checkValue()" [(ngModel)]="productQuantity">
-  </mat-form-field>
+      <div class="row">
+        <div class="col mini-box">
+          <h3 mat-grid-tile-header> {{data.name}} </h3>
+        </div>
+      </div>
 
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.name">Add to Card</button>
+      <br>
+
+      <div class="row">
+        <div class="col mini-box">
+          <p>{{data.price | number: '1.2-2'}} лв.</p>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col mini-box">
+          <p>Ut diam quam nulla porttitor massa id neque. Diam quis enim lobortis scelerisque fermentum dui faucibus in
+            ornare.</p>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col mini-box">
+          <mat-form-field color="accent" style="max-width: 30%" class="quantityForm" appearance="outline">
+            <mat-label>К-во:</mat-label>
+            <input matInput style="font-size: 20px;" #quantityNum type="number" min="1" (blur)="checkValue()"
+              [(ngModel)]="productQuantity">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <br>
+      <div class="row" class="dialog-actions">
+        <div class="col mini-box" style="background-color: greenyellow">
+          <button mat-button [mat-dialog-close]="data.name">Add to Card</button>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+          <div class="col mini-box">
+              <a color="primary" mat-button (click)="onNoClick()">No Thanks</a>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
 </div>
+

@@ -1,5 +1,10 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
 .example-card {
-    max-width: 250px;
+    max-width: 350px;
+    max-height: 450px;
     text-align: center;
-    position: static
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
   }
