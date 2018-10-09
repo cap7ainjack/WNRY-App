@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	status: boolean;
 	subscription: Subscription;
+	navClass = 'navbar';
 
 	constructor(private userService: UserService) {
 		}
@@ -28,5 +29,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
 		ngOnDestroy() {
 		// prevent memory leak when component is destroyed
 		this.subscription.unsubscribe();
+	}
+
+	burgerMenu(event) {
+		// console.log(event.path[1].id);
+		// console.log(event);
+
+		if (this.navClass === 'navbar') {
+			this.navClass += ' responsive'
+		} else {
+			this.navClass = 'navbar'
+		}
 	}
 }

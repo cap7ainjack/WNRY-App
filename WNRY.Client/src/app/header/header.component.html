@@ -1,27 +1,26 @@
+<div [class]="navClass" id="mainNav"> 
+  <ul>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/dashboard/home">Начало</a></li>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a></li>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/info">За избата</a></li>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/gallery">Галерия</a></li>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/contact">Контакти</a></li>
+    <li>
+      <a *ngIf="!status" style="float:right" mat-button class="mat-button" href="#" routerLinkActive="active"
+        routerLink="/login">Вписване
+      </a>
+    </li>
+    <li>
+      <button *ngIf="status" style="float:right" mat-button class="mat-button">Отписване</button>
+    </li>
+  </ul>
 
-<div class="navbar" >
-
-    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/dashboard/home">Начало</a>
-    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a>
-    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/info">За избата</a>
-    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/gallery">Галерия</a>
-    <a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/contact">Контакти</a>
-
-        <a 
-          *ngIf="!status" 
-          style="float:right" 
-          mat-button class="mat-button" 
-          href="#" routerLinkActive="active" 
-          routerLink="/login"
-        >Вписване
-        </a>
-
-        <button *ngIf="status" style="float:right" mat-button class="mat-button">Отписване</button>
-  </div>
-
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="burgerMenu($event)">&#9776;</a>
+</div>
 
 
-  <!-- 
+
+<!-- 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">JwtAuthDemo</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
