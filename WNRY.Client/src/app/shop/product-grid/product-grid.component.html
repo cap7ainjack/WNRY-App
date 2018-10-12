@@ -1,14 +1,14 @@
-<mat-grid-list cols="3" rowHeight="1:1">
+<mat-grid-list [cols]="columnsToShow" rowHeight="1:1">
     <mat-grid-tile *ngFor="let item of products">
-        <mat-card class="example-card">
+        <mat-card class="example-card" (click)=buyProduct(item)>
             <img class="card-image" mat-card-image [src]=item.img>
 
             <mat-card-content>
                 <h6> {{item.name}}</h6>
-                <p>${{item.price | number: '1.2-2'}}</p>
+                <p>{{item.price | number: '1.2-2'}} лв.</p>
             </mat-card-content>
 
-            <button mat-button (click)=buyProduct(item)>Детайли</button>
+            <!-- <button mat-button (click)=buyProduct(item)>Детайли</button> -->
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
