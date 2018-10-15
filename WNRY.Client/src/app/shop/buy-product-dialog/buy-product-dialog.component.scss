@@ -1,15 +1,13 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .big-box {
-    // width: 200px;
-    // height: 150px;
     position: relative;
     display: inline-block;
     overflow: hidden;
     margin: 0;
 
-    height: 500px; 
-    width: 400px;
+    max-height: 500px; 
+    max-width: 400px;
   }
   
   div > img {

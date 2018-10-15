@@ -13,8 +13,7 @@ export class BuyProductDialogComponent {
 
 	constructor(
 		public dialogRef: MatDialogRef<BuyProductDialogComponent>,
-		@Inject(MAT_DIALOG_DATA) public data: ProductData) {
-	}
+		@Inject(MAT_DIALOG_DATA) public data: ProductData) {}
 
 	onNoClick(): void {
 		this.dialogRef.close();
