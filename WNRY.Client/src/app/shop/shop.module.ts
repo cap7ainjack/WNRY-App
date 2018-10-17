@@ -25,6 +25,7 @@ import { AuthGuard } from '../auth.guard';
 import {MatCardModule} from '@angular/material/card';
 
 import { LayoutModule } from '@angular/cdk/layout';
+import { CartComponent } from './shopping-cart/shopping-card.component';
 
 @NgModule({
 	imports: [
@@ -40,7 +41,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 				MatIconModule,
 				LayoutModule
 	],
-	declarations: [ShopHomeComponent, ProductGridComponent, BuyProductDialogComponent/* RootComponent, HomeComponent, SettingsComponent */],
+	declarations: [
+		ShopHomeComponent,
+		ProductGridComponent,
+		BuyProductDialogComponent,
+		CartComponent
+		/* RootComponent, HomeComponent, SettingsComponent */
+	],
 	exports:      [ ],
 	providers:    [],
 	entryComponents: [BuyProductDialogComponent]

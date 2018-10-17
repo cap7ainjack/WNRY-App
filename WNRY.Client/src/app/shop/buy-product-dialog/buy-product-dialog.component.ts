@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ProductData } from '../models/product-data';
+import { CartItem } from '../models/cart-item';
 
 
 @Component({
@@ -10,10 +11,16 @@ import { ProductData } from '../models/product-data';
 })
 export class BuyProductDialogComponent {
 	productQuantity = 1;
+	cartItem: CartItem = {
+		product: null,
+		quantity: 0
+	};
 
 	constructor(
 		public dialogRef: MatDialogRef<BuyProductDialogComponent>,
-		@Inject(MAT_DIALOG_DATA) public data: ProductData) {}
+		@Inject(MAT_DIALOG_DATA) public data: ProductData) {
+			this.cartItem.product = data;
+		}
 
 	onNoClick(): void {
 		this.dialogRef.close();
@@ -23,5 +30,6 @@ export class BuyProductDialogComponent {
 		if (this.productQuantity < 1) {
 			this.productQuantity = 1;
 		}
+		this.cartItem.quantity = this.productQuantity;
 	}
 }
