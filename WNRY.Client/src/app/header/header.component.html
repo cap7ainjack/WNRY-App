@@ -1,8 +1,13 @@
 <div [class]="navClass" id="mainNav">
-  
+
   <button mat-icon-button [matMenuTriggerFor]="menu" style="float:right; top:10px;">
     <mat-icon>account_circle</mat-icon>
   </button>
+  
+  <button mat-icon-button href="#" routerLinkActive="active" routerLink="/cart" style="float:right; top:10px;">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
   <mat-menu #menu="matMenu" [overlapTrigger]="false">
     <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/login">Вписване</a>
     <button mat-menu-item *ngIf="status" class="mat-button">Отписване</button>
