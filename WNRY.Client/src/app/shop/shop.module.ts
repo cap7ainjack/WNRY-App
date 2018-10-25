@@ -19,13 +19,14 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table'
 
 import { AuthGuard } from '../auth.guard';
 
 import {MatCardModule} from '@angular/material/card';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { CartComponent } from './shopping-cart/shopping-card.component';
+import { CartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
 	imports: [
@@ -39,6 +40,7 @@ import { CartComponent } from './shopping-cart/shopping-card.component';
 				MatDialogModule,
 				MatInputModule,
 				MatIconModule,
+				MatTableModule,
 				LayoutModule
 	],
 	declarations: [
