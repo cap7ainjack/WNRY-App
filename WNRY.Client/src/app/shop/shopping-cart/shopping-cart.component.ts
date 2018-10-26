@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ProductData } from '../models/product-data';
 import { CartItem } from '../models/cart-item';
- // import { ProductService } from '../../services/product.service';
+// import { ProductService } from '../../services/product.service';
 
 @Component({
 	templateUrl: 'shopping-cart.component.html',
@@ -25,9 +25,9 @@ export class CartComponent implements OnInit {
 	ngOnInit() {
 		this.activatedRoute.params.subscribe(params => {
 			let id = params['id'];
-			if (id) {
+			if (id) { // TODO only else case works now
 				let item: CartItem = {
-					product:  null, // this.productService.find(id),
+					product: null, // this.productService.find(id),
 					quantity: 1
 				};
 				if (localStorage.getItem('cart') == null) {
@@ -94,16 +94,27 @@ export class CartComponent implements OnInit {
 			let item: CartItem = JSON.parse(cart[i]);
 			if (item.product.id === id) {
 				item.quantity += 1;
+				cart[i] = JSON.stringify(item);
 				break;
 			}
-
-			console.log(item);
 		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 		this.loadCart();
 	}
 
 	removeProduct(id: string) {
-
+		let cart: any = JSON.parse(localStorage.getItem('cart'))
+		for (let i = 0; i < cart.length; i++) {
+			let item: CartItem = JSON.parse(cart[i]);
+			if (item.product.id === id) {
+				if (item.quantity > 1) {
+					item.quantity -= 1;
+					cart[i] = JSON.stringify(item);
+				}
+				break;
+			}
+		}
+		localStorage.setItem('cart', JSON.stringify(cart));
+		this.loadCart();
 	}
 }
