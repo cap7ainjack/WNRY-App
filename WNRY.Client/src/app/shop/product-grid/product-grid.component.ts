@@ -11,7 +11,7 @@ import {
 @Component({
 	selector: 'product-grid',
 	templateUrl: './product-grid.component.html',
-	styleUrls: ['./product-grid.component.scss']
+	styleUrls: ['../shop-component.scss']
 })
 export class ProductGridComponent implements OnInit {
 	@Input('products') products: any;

@@ -7,7 +7,7 @@ import { CartItem } from '../models/cart-item';
 @Component({
 	selector: 'buy-product-dialog',
 	templateUrl: './buy-product-dialog.component.html',
-	styleUrls: ['./buy-product-dialog.component.scss']
+	styleUrls: ['./buy-product-dialog.component.scss', '../shop-component.scss']
 })
 export class BuyProductDialogComponent {
 	productQuantity = 1;
