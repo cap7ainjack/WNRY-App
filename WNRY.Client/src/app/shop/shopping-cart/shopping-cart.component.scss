@@ -1,74 +1,48 @@
+@import "~bootstrap/dist/css/bootstrap.css";
 
-p, input {
-	font-size: 16px;
+
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+  vertical-align: middle;
 }
 
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+@media screen and (max-width: 660px) {
+  table#cart tbody td .form-control {
+    width: 20%;
+    display: inline !important;
+  }
+  .actions .btn {
+    width: 36%;
+    margin: 1.5em 0;
+  }
+  .actions .btn-info {
+    float: left;
+  }
+  .actions .btn-danger {
+    float: right;
+  }
+  table#cart thead {
+    display: none;
+  }
+  table#cart tbody td {
+    display: block;
+    padding: .6rem;
+    min-width: 320px;
+  }
+  table#cart tbody tr td:first-child {
+    // background: #333;
+   // color: #fff;
+  }
+  table#cart tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 8rem;
+  }
+  table#cart tfoot td {
+    display: block;
+  }
+  table#cart tfoot td .btn {
+    display: block;
+  }
 }
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-table td {
-    width: 110px;
-    min-width: 110px;
-    text-align: left;
-}
-
-span.qtty {
-    text-align: left;
-    font-size: 0;
-    line-height: 40px;
-}
-
-table td b {
-	position: absolute;
-	//display: flex;
-	top: 14px;
-    left: 14px;
-    right: 14px;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-    white-space: normal;
-    text-align: center;
-}
-
-/* Responsive
-==================================== */
-@media (max-width: 600px) {
-	table {
-		width: 100%;
-		margin-bottom: 0px;
-		border: 1px solid #f1efef;
-		display: block;
-	}
-
- 	table td {
-		box-sizing: border-box;
-		display: inline-block;
-		width: 100%;
-		padding: 2%;
-		vertical-align: top;
-		border: none;
-	}
-
-	table td b {
-		display: inline-block;
-		min-width: 140px;
-		margin-right: 18px;
-		text-align: right;
-		font-weight: 400;
-		font-size: 13px;
-		line-height: 18px;
-		color: #a2a2a2;
-	}
-
-}
-
