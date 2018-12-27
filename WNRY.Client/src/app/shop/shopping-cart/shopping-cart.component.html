@@ -5,10 +5,10 @@
     <thead>
       <tr>
         <th style="width:50%"></th>
-        <th style="width:15%">Ед. цена</th>
+        <th style="width:10%">Ед. цена</th>
         <th style="width:8%">Количество</th>
-        <th style="width:22%" class="text-center">Сума</th>
-        <th style="width:10%">Изтриване</th>
+        <th style="width:22%">Сума</th>
+        <th style="width:10%"></th>
       </tr>
     </thead>
     <tbody>
@@ -25,22 +25,22 @@
         <td data-th="К-во">
             <div>
                 <button class="btn btn-secondary btn-sm" (click)="removeProduct(element.product.id)">-</button>   
-                <input readonly="true" [(ngModel)]="element.quantity" style="border-style: none; max-width: 20%; text-align: center;" />
+                <span style="margin: 10px">{{element.quantity}}</span>
                 <button class="btn btn-danger btn-sm" (click)="addProduct(element.product.id)">+</button>
             </div>
         </td>
         <td data-th="Сума">{{(element.product.price * element.quantity) | number: '1.2-2'}} лв</td>
         <td class="actions" data-th="Изтриване">
-          <button class="btn btn-dark btn-sm"><i class="far fa-times-circle"></i></button>
+          <button class="btn btn-sm"><i class="fas fa-times"></i></button>
         </td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-
-        <td class="hidden-xs text-center"><strong>Обща сума: {{total | number: '1.2-2'}} лв.</strong></td>
-        <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+        <td class="col-sm-4"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+        <td class="col-sm-2"></td>
+        <td class="col-sm-2" class="hidden-xs text-center"><strong>Обща сума: {{total | number: '1.2-2'}} лв.</strong></td>
+        <td class="col-sm-4"><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
       </tr>
     </tfoot>
   </table>
