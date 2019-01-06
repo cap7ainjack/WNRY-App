@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
 	<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="7.6.100" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="2.1.6" />
+    <PackageReference Include="FluentValidation" Version="8.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="2.2.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.3.0" />
     <PackageReference Include="Microsoft.NETCore.App" />
   </ItemGroup>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.NETCore.App" Version="2.1.4" />
+    <PackageReference Update="Microsoft.NETCore.App" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

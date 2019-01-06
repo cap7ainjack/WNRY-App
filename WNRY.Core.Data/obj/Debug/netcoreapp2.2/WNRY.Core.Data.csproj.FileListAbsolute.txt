@@ -1,0 +1,14 @@
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Core.Data.deps.json
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Core.Data.runtimeconfig.json
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Core.Data.runtimeconfig.dev.json
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Core.Data.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Core.Data.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Models.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\bin\Debug\netcoreapp2.2\WNRY.Models.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.csprojAssemblyReference.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.AssemblyInfoInputs.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.AssemblyInfo.cs
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.csproj.CopyComplete
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Data\obj\Debug\netcoreapp2.2\WNRY.Core.Data.pdb
