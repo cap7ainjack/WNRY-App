@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,17 @@ namespace WNRY.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             // Add framework services.
             services.AddDbContext<WnryDbContext>(options =>
                                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
@@ -140,6 +152,9 @@ namespace WNRY.API
                 });
 
             app.UseCors("AllowAll");
+
+            app.UseHttpsRedirection();
+            app.UseCookiePolicy();
 
             app.UseAuthentication();
             app.UseDefaultFiles();
