@@ -47,11 +47,6 @@ C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.Ra
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csproj.CopyComplete
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.dll
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.pdb
-C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csproj.CoreCompileInputs.cache
-C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cache
-C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cs
-C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.AssemblyInfoInputs.cache
-C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.AssemblyInfo.cs
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.deps.json
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.runtimeconfig.json
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.API.runtimeconfig.dev.json
@@ -66,6 +61,11 @@ C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\bin\Debug\netcoreapp2.1\W
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\bin\Debug\netcoreapp2.1\WNRY.Services.pdb
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csprojAssemblyReference.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csproj.CoreCompileInputs.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorAssemblyInfo.cs
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.AssemblyInfoInputs.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.AssemblyInfo.cs
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.RazorTargetAssemblyInfo.cache
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.csproj.CopyComplete
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.API\obj\Debug\netcoreapp2.1\WNRY.API.dll
