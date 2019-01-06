@@ -8,8 +8,12 @@ h3 {
 
 .total {
   margin: auto;
-  text-align: center;
+  text-align: left;
   background-color: #ececec;
+}
+
+.total p {
+  color: grey;
 }
 
 .container {

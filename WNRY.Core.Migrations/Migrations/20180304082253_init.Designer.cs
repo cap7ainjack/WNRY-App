@@ -206,6 +206,22 @@ namespace WNRY.Migrations.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("WNRY.Models.CommonModels.Region", b =>
+            {
+                b.Property<Guid>("Id")
+                    .ValueGeneratedOnAdd();
+
+                b.Property<string>("Name");
+
+                b.Property<string>("Ekatte");
+
+                b.Property<string>("ShortName");
+
+                b.HasKey("Id");
+
+                b.ToTable("Regions");
+            });
+
             modelBuilder.Entity("WNRY.Models.EntityModels.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
