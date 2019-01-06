@@ -1,4 +1,12 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-focused .mat-form-field-label {
+  color: rgba(184, 8, 8, 0.63) !important;
+}
+  
+.mat-form-field-ripple {
+  background-color: rgba(184, 8, 8, 0.63) !important;
+ }
 
 
 html {
@@ -6,7 +14,7 @@ html {
   background: #e7e7e7;
 }
 
-a, h3 {
+a, h3, h5 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
 }
 

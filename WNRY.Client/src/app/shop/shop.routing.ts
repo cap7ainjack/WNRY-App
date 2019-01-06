@@ -5,6 +5,7 @@ import { ShopHomeComponent } from './shop-home/shop-home.component';
 
 import { AuthGuard } from '../auth.guard';
 import { CartComponent } from './shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
  // tslint:disable:indent
@@ -19,5 +20,6 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
     },
 
     { path: 'cart', component: CartComponent },
+    { path: 'checkout', component: CheckoutComponent }
 ]);
 

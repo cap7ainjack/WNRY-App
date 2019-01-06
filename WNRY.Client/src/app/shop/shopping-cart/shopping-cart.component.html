@@ -4,11 +4,11 @@
   <table id="cart" class="table table-hover table-condensed">
     <thead>
       <tr>
-        <th style="width:50%"></th>
-        <th style="width:10%">Ед. цена</th>
-        <th style="width:8%">Количество</th>
-        <th style="width:22%">Сума</th>
-        <th style="width:10%"></th>
+        <th style="width:40%"></th>
+        <th style="width:15%" style="white-space: nowrap;">Ед. цена</th>
+        <th style="width:25%">Количество</th>
+        <th style="width:15%" class="text-center">Сума</th>
+        <th style="width:5%"></th>
       </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
                 <button class="btn btn-danger btn-sm" (click)="addProduct(element.product.id)">+</button>
             </div>
         </td>
-        <td data-th="Сума">{{(element.product.price * element.quantity) | number: '1.2-2'}} лв</td>
+        <td data-th="Сума" class="text-center">{{(element.product.price * element.quantity) | number: '1.2-2'}} лв</td>
         <td class="actions" data-th="Изтриване">
           <button class="btn btn-sm"><i class="fas fa-times"></i></button>
         </td>
