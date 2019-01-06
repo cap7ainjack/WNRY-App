@@ -23,3 +23,4 @@ C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Models\bin\Debug\netcore
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Models\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.dll
 C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Models\obj\Debug\netcoreapp2.1\WNRY.Models.csprojAssemblyReference.cache
