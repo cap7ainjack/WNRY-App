@@ -1,9 +1,9 @@
-﻿using FluentValidation;
+﻿using FluentValidation.Attributes;
 using WNRY.Models.ViewModels.Validations;
 
 namespace WNRY.Models.ViewModels
 {
-    // [Validator(typeof(CredentialsViewModelValidator))]
+    [Validator(typeof(CredentialsViewModelValidator))]
     public class CredentialsViewModel
     {
         public string UserName { get; set; }
