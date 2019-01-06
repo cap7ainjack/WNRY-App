@@ -26,3 +26,17 @@ C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csproj.CopyComplete
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.dll
 C:\Users\user\Desktop\WNRY\WNRY-App\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csproj.CoreCompileInputs.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.AssemblyInfoInputs.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.AssemblyInfo.cs
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Migrations.deps.json
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Migrations.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Migrations.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Core.Data.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Models.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Core.Data.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\bin\Debug\netcoreapp2.1\WNRY.Models.pdb
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csprojAssemblyReference.cache
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.csproj.CopyComplete
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.dll
+C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Core.Migrations\obj\Debug\netcoreapp2.1\WNRY.Migrations.pdb
