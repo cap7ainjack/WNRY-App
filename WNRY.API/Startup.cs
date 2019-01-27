@@ -20,6 +20,7 @@ using WNRY.Core.Data;
 using WNRY.Models.IdentityModels;
 using WNRY.Services.Identity;
 using WNRY.Services.Utils;
+using WNRY.Core.Data.Interfaces;
 
 namespace WNRY.API
 {
@@ -46,12 +47,20 @@ namespace WNRY.API
 
 
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Add framework services.
             services.AddDbContext<WnryDbContext>(options =>
                                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                                             sqlServerOptionsAction => sqlServerOptionsAction.MigrationsAssembly("WNRY.Migrations")));
+
+            // Data repositories
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+
+            services.AddScoped(typeof(IRegionRepository), typeof(RegionsRepository));
+
+            // services.AddScoped<BaseRepository<Customer>, CustomerRepository>(); not sure if needed BM
+
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
@@ -72,7 +81,7 @@ namespace WNRY.API
                 options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
             });
 
-            var tokenValidationParameters = new TokenValidationParameters
+            TokenValidationParameters tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = true,
                 ValidIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)],
@@ -160,6 +169,12 @@ namespace WNRY.API
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
+
+            AutoMapper.Mapper.Initialize(cfg =>
+            {
+                // cfg.CreateMap<AppUser, Models.ViewModels.CustomerVM>();
+                cfg.CreateMap<Models.CommonModels.Region, Models.ViewModels.RegionVM>();
+            });
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿namespace WNRY.Models.IdentityModels
+﻿using System;
+
+namespace WNRY.Models.IdentityModels
 {
     public class Customer
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string IdentityId { get; set; }
         public AppUser Identity { get; set; }  // navigation property
         public string Location { get; set; }
