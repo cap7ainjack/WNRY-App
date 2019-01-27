@@ -40,7 +40,7 @@
         <td class="col-sm-4"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
         <td class="col-sm-2"></td>
         <td class="col-sm-2" class="hidden-xs text-center"><strong>Обща сума: {{total | number: '1.2-2'}} лв.</strong></td>
-        <td class="col-sm-4"><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+        <td class="col-sm-4"><a [routerLink]="['/checkout']" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
       </tr>
     </tfoot>
   </table>
