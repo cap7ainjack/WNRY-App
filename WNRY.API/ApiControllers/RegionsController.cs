@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 using WNRY.Core.Data.Interfaces;
 using WNRY.Models.CommonModels;
 using WNRY.Models.ViewModels;
+using WNRY.Services.Interfaces;
 
 namespace WNRY.API.ApiControllers
 {
     [Route("api/regions")]
     public class RegionsController : Controller
     {
-        private IRegionRepository repository;
+        private IRegionService regionService;
 
-        public RegionsController(IRegionRepository repository)
+        public RegionsController(IRegionService regionService)
         {
-            this.repository = repository;
+            this.regionService = regionService;
         }
 
         [HttpGet()]
         public IActionResult All()
         {
-            IEnumerable<Region> regions = this.repository.All();
-
-            IEnumerable<RegionVM> result = AutoMapper.Mapper.Map<IEnumerable<RegionVM>>(regions);
+            IEnumerable<RegionVM> result = this.regionService.GetAll();
 
             return this.Ok(result);
         }

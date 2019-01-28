@@ -21,6 +21,8 @@ using WNRY.Models.IdentityModels;
 using WNRY.Services.Identity;
 using WNRY.Services.Utils;
 using WNRY.Core.Data.Interfaces;
+using WNRY.Services.Interfaces;
+using WNRY.Services;
 
 namespace WNRY.API
 {
@@ -56,10 +58,11 @@ namespace WNRY.API
 
             // Data repositories
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
-
             services.AddScoped(typeof(IRegionRepository), typeof(RegionsRepository));
 
-            // services.AddScoped<BaseRepository<Customer>, CustomerRepository>(); not sure if needed BM
+            // Application  Services
+            services.AddTransient<IRegionService, RegionService>();
+
 
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
