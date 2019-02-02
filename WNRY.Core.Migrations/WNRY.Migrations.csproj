@@ -6,11 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190202132854_CommonModelsCreate.cs" />
+    <Compile Remove="Migrations\20190202132854_CommonModelsCreate.Designer.cs" />
+    <Compile Remove="Migrations\20190202133503_CommonModelsCreate.cs" />
+    <Compile Remove="Migrations\20190202133503_CommonModelsCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WNRY.Core.Data\WNRY.Core.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Migrations\20190202133902_CommonModelsCreate.Designer.cs">
+      <DependentUpon>20190202133902_CommonModelsCreate.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

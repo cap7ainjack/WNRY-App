@@ -33,5 +33,7 @@ namespace WNRY.Models.CommonModels
         public AppUser User { get; set; }
 
         public Guid UserId { get; set; }
+
+        public IEnumerable<XRefOrderProducts> OrderedProducts { get; set; }
     }
 }

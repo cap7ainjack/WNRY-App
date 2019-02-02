@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WNRY.Core.Migrations\WNRY.Migrations.csproj" />
     <ProjectReference Include="..\WNRY.Core.Models\WNRY.Models.csproj" />
     <ProjectReference Include="..\WNRY.Services\WNRY.Services.csproj" />
   </ItemGroup>

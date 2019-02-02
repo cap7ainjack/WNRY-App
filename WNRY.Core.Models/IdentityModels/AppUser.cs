@@ -8,6 +8,9 @@ namespace WNRY.Models.IdentityModels
         // Extended Properties
 
         public long? FacebookId { get; set; }
-               
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
     }
 }

@@ -13,9 +13,19 @@ namespace WNRY.Core.Data
         {
         }
 
-        public DbSet<Customer> Customers { get; set; }
+        // public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Region> Regions { get; set; }
+
+        public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<ContactDetails> ContactsDetails { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<XRefOrderProducts> XRefOrderProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
