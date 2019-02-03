@@ -27,6 +27,9 @@
     <Compile Update="Migrations\20190203130354_appUserModelUpdate.Designer.cs">
       <DependentUpon>20190203130354_appUserModelUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Update="Migrations\20190203143104_decimalRangeAdd.Designer.cs">
+      <DependentUpon>20190203143104_decimalRangeAdd.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

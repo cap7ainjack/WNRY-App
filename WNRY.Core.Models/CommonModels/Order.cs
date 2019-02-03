@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using WNRY.Models.IdentityModels;
 
@@ -14,6 +15,7 @@ namespace WNRY.Models.CommonModels
         public DateTime Date { get; set; }
 
         [Required]
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal TotalAmount { get; set; }
 
         public DateTime? ShippingDate { get; set; }

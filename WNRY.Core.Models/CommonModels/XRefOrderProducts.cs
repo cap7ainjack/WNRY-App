@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace WNRY.Models.CommonModels
@@ -18,6 +19,7 @@ namespace WNRY.Models.CommonModels
 
         public int Quantity { get; set; }
 
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal TotalPrice { get; set; }
 
         // public double TotalVolume { get; set; }
