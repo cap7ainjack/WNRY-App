@@ -16,17 +16,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	navClass = 'navbar';
 
 	constructor(private userService: UserService) {
-		}
+	}
 
-		logout() {
-			this.userService.logout();
+	logout() {
+		this.userService.logout();
 	}
 
 	ngOnInit() {
 		this.subscription = this.userService.authNavStatus$.subscribe(status => this.status = status);
 	}
 
-		ngOnDestroy() {
+	ngOnDestroy() {
 		// prevent memory leak when component is destroyed
 		this.subscription.unsubscribe();
 	}

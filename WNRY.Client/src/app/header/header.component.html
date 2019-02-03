@@ -10,7 +10,7 @@
 
   <mat-menu #menu="matMenu" [overlapTrigger]="false">
     <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/login">Вписване</a>
-    <button mat-menu-item *ngIf="status" class="mat-button">Отписване</button>
+    <button mat-menu-item *ngIf="status" class="mat-button" (click)="logout()">Отписване</button>
   </mat-menu>
 
   <a href="javascript:void(0);" style="font-size:15px" class="icon" (click)="burgerMenu($event)">&#9776;</a>

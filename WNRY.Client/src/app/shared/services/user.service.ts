@@ -60,10 +60,7 @@ export class UserService extends BaseService {
 			.pipe(
 				map((response: HttpResponse<any>) => {
 					let result = response;
-					console.log(result);
-					console.log(result['auth_token']);
 					if (result && result['auth_token']) {
-						console.log(result['auth_token']);
 						localStorage.setItem('auth_token', result['auth_token']);
 					}
 					this.loggedIn = true;
