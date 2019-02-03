@@ -12,12 +12,12 @@ namespace WNRY.API.ApiControllers
 {
     public class CustomersController : Controller // TODO: Admin only
     {
-        private IRepository<Customer> repository;
+        //private IRepository<Customer> repository;
 
-        public CustomersController(IRepository<Customer> repository)
-        {
-            this.repository = repository;
-        }
+        //public CustomersController(IRepository<Customer> repository)
+        //{
+        //    this.repository = repository;
+        //}
 
         //[HttpGet]
         //public IActionResult All()

@@ -58,10 +58,13 @@ namespace WNRY.API
 
             // Data repositories
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+
             services.AddScoped(typeof(IRegionRepository), typeof(RegionsRepository));
+            services.AddScoped(typeof(IContactDetailsRepository), typeof(ContactDetailsRepository));
 
             // Application  Services
             services.AddTransient<IRegionService, RegionService>();
+            services.AddTransient<IContactDetailsService, ContactDetailsService>();
 
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using WNRY.Models.IdentityModels;
 
 namespace WNRY.Models.CommonModels
 {
@@ -22,5 +23,9 @@ namespace WNRY.Models.CommonModels
 
         [Required]
         public string Email { get; set; }
+
+        public AppUser Identity { get; set; }
+
+        public string IdentityId { get; set; }
     }
 }

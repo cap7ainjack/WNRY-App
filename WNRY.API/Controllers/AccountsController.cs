@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using WNRY.Core.Data;
 using WNRY.Models.IdentityModels;
 using WNRY.Models.ViewModels;
+using WNRY.Services.Interfaces;
 using WNRY.Services.Utils;
 
 namespace WNRY.API.Controllers
@@ -16,15 +17,17 @@ namespace WNRY.API.Controllers
     [Route("api/Accounts")]
     public class AccountsController : Controller
     {
-        private readonly WnryDbContext _appDbContext;
+        // private readonly WnryDbContext _appDbContext;
         private readonly UserManager<AppUser> _userManager;
         // private readonly IMapper _mapper;
+        private IContactDetailsService contactDetailsService;
 
-        public AccountsController(UserManager<AppUser> userManager, WnryDbContext appDbContext)
+        public AccountsController(UserManager<AppUser> userManager, IContactDetailsService contactDetailsService)
         {
             _userManager = userManager;
+            this.contactDetailsService = contactDetailsService;
             // _mapper = mapper;
-            _appDbContext = appDbContext;
+            // _appDbContext = appDbContext;
         }
 
 
@@ -44,8 +47,10 @@ namespace WNRY.API.Controllers
 
             if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
 
+            // Create ContacDetails if provided
+            await this.contactDetailsService.Insert(model, userIdentity.Id);
             // await _appDbContext.Customers.AddAsync(new Customer { IdentityId = userIdentity.Id, Location = model.Location });
-            await _appDbContext.SaveChangesAsync();
+            // await _appDbContext.SaveChangesAsync();
 
             return new OkObjectResult("Account created");
         }

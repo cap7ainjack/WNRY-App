@@ -11,8 +11,8 @@ namespace WNRY.Services.Utils
             {
                 Email = viewModel.Email,
                 PasswordHash = viewModel.Password,
-                FirstName = viewModel.FirstName,
-                LastName = viewModel.LastName,
+                // FirstName = viewModel.FirstName,
+                // LastName = viewModel.LastName,
                 UserName = viewModel.Email,
                 // locations
             };

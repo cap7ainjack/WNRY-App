@@ -24,6 +24,9 @@
     <Compile Update="Migrations\20190202133902_CommonModelsCreate.Designer.cs">
       <DependentUpon>20190202133902_CommonModelsCreate.cs</DependentUpon>
     </Compile>
+    <Compile Update="Migrations\20190203130354_appUserModelUpdate.Designer.cs">
+      <DependentUpon>20190203130354_appUserModelUpdate.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
