@@ -1,5 +1,5 @@
 
-import {map, catchError,  take } from 'rxjs/operators';
+import { map, catchError, take } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
@@ -8,7 +8,7 @@ import { ConfigService } from '../utils/config.service';
 
 import { BaseService } from './base.service';
 
-import { Observable ,  BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 
@@ -32,42 +32,45 @@ export class UserService extends BaseService {
 		this.baseUrl = configService.getApiURI();
 	}
 
-	register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<any> {
-	let body = JSON.stringify({ email, password, firstName, lastName, location });
-	let httpOptions = {
-		headers: new HttpHeaders({
-			'Content-Type':  'application/json'
-		})
-	}
+	register(email: string, password: string, name: string, phone: string): Observable<any> {
+		let body = JSON.stringify({ email, password, name, phone });
+		let httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		}
 
-	return this.http.post(this.baseUrl + '/accounts', body, httpOptions)
-		.pipe(
-		map(res => true),
-		catchError(this.handleError));
+		return this.http.post(this.baseUrl + '/accounts', body, httpOptions)
+			.pipe(
+				map(res => true),
+				catchError(this.handleError));
 	}
 
 	login(userName, password) {
 		let httpOptions = {
-		headers: new HttpHeaders({
-			'Content-Type':  'application/json'
-		})
-	}
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		}
 
 		return this.http
 			.post(
-			this.baseUrl + '/auth/login',
-			JSON.stringify({ userName, password }), httpOptions)
+				this.baseUrl + '/auth/login',
+				JSON.stringify({ userName, password }), httpOptions)
 			.pipe(
-			map((response: HttpResponse<any>) => {
-				let result = response;
-				if (result && result['auth_token']) {
-					localStorage.setItem('auth_token', result['auth_token']);
-				}
-			this.loggedIn = true;
-			this._authNavStatusSource.next(true);
-			return true;
-		}),
-		catchError(this.handleError));
+				map((response: HttpResponse<any>) => {
+					let result = response;
+					console.log(result);
+					console.log(result['auth_token']);
+					if (result && result['auth_token']) {
+						console.log(result['auth_token']);
+						localStorage.setItem('auth_token', result['auth_token']);
+					}
+					this.loggedIn = true;
+					this._authNavStatusSource.next(true);
+					return true;
+				}),
+				catchError(this.handleError));
 	}
 
 	logout() {
@@ -83,23 +86,23 @@ export class UserService extends BaseService {
 	facebookLogin(accessToken: string) {
 		let httpOptions = {
 			headers: new HttpHeaders({
-				'Content-Type':  'application/json'
+				'Content-Type': 'application/json'
 			})
 		}
 		let body = JSON.stringify({ accessToken });
 		return this.http
 			.post(
-			this.baseUrl + '/externalauth/facebook', body, httpOptions)
+				this.baseUrl + '/externalauth/facebook', body, httpOptions)
 			.pipe(
-			map((response: HttpResponse<any>) => {
-				let result = response;
-				if (result && result['auth_token']) {
-					localStorage.setItem('auth_token', result['auth_token']);
-				}
-			this.loggedIn = true;
-			this._authNavStatusSource.next(true);
-			return true;
-		}),
-		catchError(this.handleError));
+				map((response: HttpResponse<any>) => {
+					let result = response;
+					if (result && result['auth_token']) {
+						localStorage.setItem('auth_token', result['auth_token']);
+					}
+					this.loggedIn = true;
+					this._authNavStatusSource.next(true);
+					return true;
+				}),
+				catchError(this.handleError));
 	}
 }

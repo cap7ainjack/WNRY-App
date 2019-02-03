@@ -8,12 +8,12 @@
   <div class="col-md-6">
       <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
           <div class="form-group">
-              <label for="first-name">First name</label>
-              <input type="text" class="form-control" id="first-name" placeholder="First name" name="firstName" tmFocus ngModel>              
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Full name" name="name" tmFocus ngModel>              
           </div>
           <div class="form-group">
-              <label for="last-name">Last name</label>
-              <input type="text" class="form-control" id="last-name" placeholder="Last name" name="lastName" ngModel>              
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="last-name" placeholder="Phone" name="phone" ngModel>              
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -23,12 +23,8 @@
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel>
-          </div>   
-          <div class="form-group">
-             <label for="location">Location</label>
-             <input type="text" class="form-control" id="location" placeholder="Location"  required name="location" ngModel>              
           </div> 
-
+          
           <div class="form-group">
               <button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Sign Up</button>
               <app-spinner [isRunning]="isRequesting"></app-spinner> 

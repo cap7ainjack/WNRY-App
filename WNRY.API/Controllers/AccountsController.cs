@@ -19,17 +19,14 @@ namespace WNRY.API.Controllers
     {
         // private readonly WnryDbContext _appDbContext;
         private readonly UserManager<AppUser> _userManager;
-        // private readonly IMapper _mapper;
         private IContactDetailsService contactDetailsService;
 
         public AccountsController(UserManager<AppUser> userManager, IContactDetailsService contactDetailsService)
         {
             _userManager = userManager;
             this.contactDetailsService = contactDetailsService;
-            // _mapper = mapper;
             // _appDbContext = appDbContext;
         }
-
 
         // POST api/accounts
         [HttpPost]
@@ -39,8 +36,7 @@ namespace WNRY.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            // var userIdentity = _mapper.Map<AppUser>(model);
+            
             AppUser userIdentity = AccountsHelper.ConvertToDbObj(model);
 
             var result = await _userManager.CreateAsync(userIdentity, model.Password);
