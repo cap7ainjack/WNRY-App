@@ -8,6 +8,14 @@
   background-color: rgba(184, 8, 8, 0.63) !important;
  }
 
+ .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: rgba(84, 86, 88, 0.719) !important;
+}
+
+.mat-ripple-element {
+  background: rgba(27, 142, 241, .4) !important;
+}
+
 
 html {
   overflow-x: hidden;

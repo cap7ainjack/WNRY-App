@@ -16,29 +16,40 @@
                 <mat-form-field>
                     <input matInput placeholder="Телефон за връзка:" formControlName="phone">
                 </mat-form-field>
+
+
+                <mat-checkbox formControlName="registerUser">Създаване на профил</mat-checkbox>
+                <br>
+
+                <mat-form-field *ngIf="form.controls['registerUser'].value === true">
+                    <input matInput placeholder="Парола:" type="password" formControlName="password">
+                </mat-form-field>
             </div>
 
             <div class="col-sm-4">
                 <mat-form-field>
-                    <mat-select placeholder="Държава:">
-                        <mat-option value="option">Option</mat-option>
+                    <mat-select placeholder="Държава:" formControlName="country">
+                        <mat-option value="Bulgaria">България</mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-select placeholder="Област:">
-                        <mat-option value="option">Option</mat-option>
+                    <mat-select placeholder="Област:" formControlName="region" (openedChange)="onSelectorOpen()" >
+                        <mat-option *ngIf="regions === null || !regions.length" disabled></mat-option>
+                        <mat-option *ngFor="let region of regions" [value]="region.id">{{region.name}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-select placeholder="Населено място:">
-                        <input matInput placeholder="Населено място">
-                    </mat-select>
+                        <input matInput placeholder="Населено място:" formControlName="city">
                 </mat-form-field>
 
                 <mat-form-field>
-                    <textarea matInput placeholder="Адрес:"></textarea>
+                    <textarea matInput placeholder="Адрес:" formControlName="addressLine"></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                        <input matInput placeholder="Пощенски код"  formControlName="zipCode">
                 </mat-form-field>
             </div>
 

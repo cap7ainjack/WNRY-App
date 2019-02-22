@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
-import { SharedModule }       from '../shared/modules/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/modules/shared.module';
 
-import { routing }  from './shop.routing';
+import { routing } from './shop.routing';
 /*
 import { RootComponent } from './root/root.component';
 import { HomeComponent } from './home/home.component';
@@ -20,12 +20,13 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table'
-import {MatFormFieldModule} from '@angular/material/form-field'
-import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 import { AuthGuard } from '../auth.guard';
 
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { CartComponent } from './shopping-cart/shopping-cart.component';
@@ -38,17 +39,18 @@ import { CheckoutService } from './services/checkout.service';
 		FormsModule,
 		ReactiveFormsModule,
 		routing,
-				SharedModule,
-				MatCardModule,
-				MatGridListModule,
-				MatButtonModule,
-				MatDialogModule,
-				MatInputModule,
-				MatIconModule,
-				MatTableModule,
-				MatFormFieldModule,
-				MatSelectModule,
-				LayoutModule
+		SharedModule,
+		MatCardModule,
+		MatGridListModule,
+		MatButtonModule,
+		MatDialogModule,
+		MatInputModule,
+		MatIconModule,
+		MatTableModule,
+		MatFormFieldModule,
+		MatSelectModule,
+		MatCheckboxModule,
+		LayoutModule
 	],
 	declarations: [
 		ShopHomeComponent,
@@ -58,8 +60,8 @@ import { CheckoutService } from './services/checkout.service';
 		CheckoutComponent
 		/* RootComponent, HomeComponent, SettingsComponent */
 	],
-	exports:      [ ],
-	providers:    [ CheckoutService ],
+	exports: [],
+	providers: [CheckoutService],
 	entryComponents: [BuyProductDialogComponent]
 })
 export class ShopModule { }
