@@ -13,20 +13,26 @@
                     <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
 
+
                 <mat-form-field>
                     <input matInput placeholder="Телефон за връзка:" formControlName="phone">
                 </mat-form-field>
 
 
-                <mat-checkbox formControlName="registerUser">Създаване на профил</mat-checkbox>
+                <mat-checkbox (change)="createAccount($event)">Създаване на профил</mat-checkbox>
                 <br>
 
-                <mat-form-field *ngIf="form.controls['registerUser'].value === true">
+                <mat-form-field *ngIf="registerUser === true">
                     <input matInput placeholder="Парола:" type="password" formControlName="password">
                 </mat-form-field>
+
+                <div *ngIf="registerUser === true">
+                    <button type="button" class="btn btn-secondary" (click)="register()">Запази</button>
+                </div>
+
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-4" formGroupName="address">
                 <mat-form-field>
                     <mat-select placeholder="Държава:" formControlName="country">
                         <mat-option value="Bulgaria">България</mat-option>

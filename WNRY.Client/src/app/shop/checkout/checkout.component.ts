@@ -1,53 +1,57 @@
-import { Component, OnInit, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder, ControlValueAccessor } from '@angular/forms';
+import { MatCheckboxChange } from '@angular/material';
+
 import { CheckoutService } from '../services/checkout.service';
 import { take } from 'rxjs/operators';
+import { UserService } from '../../shared/services/user.service';
+import { TextAndValueBox } from '../../shared/models';
+
 
 @Component({
 	selector: 'checkout',
 	templateUrl: './checkout.component.html',
 	styleUrls: ['./checkout.component.scss']
 })
-export class CheckoutComponent implements OnInit, OnChanges, ControlValueAccessor {
+export class CheckoutComponent implements OnInit, ControlValueAccessor {
 
 	public total = 0;
 	hidePassword = true;
-	regions: [] = []; // add interface
+	regions: TextAndValueBox[] = []; // add interface
+	registerUser = false;
 
 	initialValue = '';
 	form: FormGroup;
 	// formControl = 'contact-details';
 
-	constructor(fb: FormBuilder, private service: CheckoutService) {
+	constructor(fb: FormBuilder, private service: CheckoutService, private userService: UserService) {
 		this.form = fb.group({
 			email: new FormControl('', [Validators.required, Validators.email]),
 			name: new FormControl('', [Validators.required]),
 			phone: new FormControl('', [Validators.required]),
 			password: new FormControl(''),
-			region: new FormControl(null, [Validators.required]),
-			city: new FormControl('', [Validators.required]),
-			addressLine: new FormControl('', [Validators.required]),
-			zipCode: new FormControl('', [Validators.required]),
-			country: new FormControl('', [Validators.required]),
-			registerUser: new FormControl(false),
+			address: fb.group({
+				region: new FormControl('', [Validators.required]),
+				city: new FormControl('', [Validators.required]),
+				addressLine: new FormControl('', [Validators.required]),
+				zipCode: new FormControl('', [Validators.required]),
+				country: new FormControl('', [Validators.required]),
+			})
 		});
 	}
-
-	ngOnChanges(changes: SimpleChanges) {
-		if (changes) {
-			if (changes['inital']) {
-				// this.initialValue = this.initial;
-			}
-		}
-	}
-
 
 	getErrorMessage() {
 		return this.form.controls['email'].hasError('email') ? 'Невалиден ел. адрес' : '';
 
-		 return this.form.controls['email'].hasError('required') ? 'You must enter a value' :
+		 /* return this.form.controls['email'].hasError('required') ? 'You must enter a value' :
 						this.form.controls['email'].hasError('email') ? 'Not a valid email' :
-							'';
+							''; */
+	}
+
+	createAccount(event: MatCheckboxChange) {
+		if (event) {
+			this.registerUser = event.checked;
+		}
 	}
 
 	ngOnInit() {
@@ -55,8 +59,22 @@ export class CheckoutComponent implements OnInit, OnChanges, ControlValueAccesso
 		if (cartContent && cartContent.total > 0) {
 			this.total = cartContent.total;
 		}
+		// this.form.controls['country'].patchValue('България')
+	}
 
-		this.form.controls['country'].patchValue('България')
+	register() {
+		if (this.form.valid && this.form.controls['password'] && this.form.controls['password'].value !== '') {
+ 			this.userService.registerWithDetails(this.form.value)
+			.pipe(take(1))
+			.subscribe(
+				result => {
+					console.log(result);
+				},
+				error => {
+					console.log(error);
+				}
+			); 
+		}
 	}
 
 	onSelectorOpen() {

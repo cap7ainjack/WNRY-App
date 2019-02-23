@@ -9,6 +9,7 @@ import { ConfigService } from '../utils/config.service';
 import { BaseService } from './base.service';
 
 import { Observable, BehaviorSubject } from 'rxjs';
+import { RegisterWithAddressViewModel } from '../models';
 
 @Injectable()
 
@@ -34,6 +35,22 @@ export class UserService extends BaseService {
 
 	register(email: string, password: string, name: string, phone: string): Observable<any> {
 		let body = JSON.stringify({ email, password, name, phone });
+		let httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		}
+
+		return this.http.post(this.baseUrl + '/accounts', body, httpOptions)
+			.pipe(
+				map(res => true),
+				catchError(this.handleError));
+	}
+
+	registerWithDetails(data: any) {
+		data.address.region = { value: data.address.region, text: '' };
+
+		let body = JSON.stringify(data);
 		let httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
