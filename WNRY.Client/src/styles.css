@@ -16,6 +16,10 @@
   background: rgba(27, 142, 241, .4) !important;
 }
 
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: rgba(84, 86, 88, 0.719) !important;
+}
+
 
 html {
   overflow-x: hidden;
