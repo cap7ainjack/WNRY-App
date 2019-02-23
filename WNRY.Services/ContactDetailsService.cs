@@ -26,10 +26,20 @@ namespace WNRY.Services
                 IdentityId = identityId
             };
 
+            if (model.Address != null)
+            {
+                this.InserAddressObj(model.Address);
+            }
+
             await this._contactDetailsRepository.AddAsync(toAdd);
             await this._contactDetailsRepository.SaveChangesAsync();
 
             return true;
+        }
+
+        private void InserAddressObj(AddressViewModel address)
+        {
+            throw new NotImplementedException();
         }
     }
 }

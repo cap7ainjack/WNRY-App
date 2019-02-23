@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using WNRY.Models.CommonModels;
 
 namespace WNRY.Models.ViewModels
 {
@@ -20,5 +21,7 @@ namespace WNRY.Models.ViewModels
 
         [Required]
         public string Phone { get; set; }
+
+        public AddressViewModel Address { get; set; }
     }
 }
