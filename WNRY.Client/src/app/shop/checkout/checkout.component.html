@@ -42,7 +42,7 @@
                 <mat-form-field>
                     <mat-select placeholder="Област:" formControlName="region" (openedChange)="onSelectorOpen()" >
                         <mat-option *ngIf="regions === null || !regions.length" disabled></mat-option>
-                        <mat-option *ngFor="let region of regions" [value]="region.id">{{region.name}}</mat-option>
+                        <mat-option *ngFor="let region of regions" [value]="region.value">{{region.text}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 

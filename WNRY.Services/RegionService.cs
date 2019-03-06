@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using WNRY.Core.Data.Interfaces;
 using WNRY.Models.CommonModels;
-using WNRY.Models.ViewModels;
+using WNRY.Models.ViewModels.Common;
 using WNRY.Services.Interfaces;
 
 namespace WNRY.Services
@@ -14,11 +15,22 @@ namespace WNRY.Services
             _regionRepository = regionRepository;
         }
 
-        public IEnumerable<RegionVM> GetAll()
+        public IEnumerable<TextAndValueBox> GetAll()
         {
             IEnumerable<Region> regions = _regionRepository.All();
 
-            IEnumerable<RegionVM> result = AutoMapper.Mapper.Map<IEnumerable<RegionVM>>(regions);
+            IEnumerable<TextAndValueBox> result = this.ConvertAllToVms(regions);
+
+            return result;
+        }
+
+        private IEnumerable<TextAndValueBox> ConvertAllToVms(IEnumerable<Region> regions)
+        {
+            IEnumerable<TextAndValueBox> result = regions.Select(z => new TextAndValueBox()
+            {
+                Text = z.Name,
+                Value = z.Id
+            });
 
             return result;
         }

@@ -73,7 +73,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				error => {
 					console.log(error);
 				}
-			); 
+			);
 		}
 	}
 

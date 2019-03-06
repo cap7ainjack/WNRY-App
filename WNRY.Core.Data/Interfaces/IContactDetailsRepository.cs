@@ -10,6 +10,8 @@ namespace WNRY.Core.Data.Interfaces
     {
         Task AddAsync(ContactDetails entity);
 
+        void Update(ContactDetails entity);
+
         Task<int> SaveChangesAsync();
     }
 }

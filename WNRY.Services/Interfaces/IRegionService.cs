@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WNRY.Models.ViewModels;
+﻿using System.Collections.Generic;
+using WNRY.Models.ViewModels.Common;
 
 namespace WNRY.Services.Interfaces
 {
     public interface IRegionService
     {
-        IEnumerable<RegionVM> GetAll();
+        IEnumerable<TextAndValueBox> GetAll();
     }
 }

@@ -20,11 +20,13 @@ namespace WNRY.API.Controllers
         // private readonly WnryDbContext _appDbContext;
         private readonly UserManager<AppUser> _userManager;
         private IContactDetailsService contactDetailsService;
+        private IAddressService addressesService;
 
-        public AccountsController(UserManager<AppUser> userManager, IContactDetailsService contactDetailsService)
+        public AccountsController(UserManager<AppUser> userManager, IContactDetailsService contactDetailsService, IAddressService addressesService)
         {
             _userManager = userManager;
             this.contactDetailsService = contactDetailsService;
+            this.addressesService = addressesService;
             // _appDbContext = appDbContext;
         }
 
@@ -36,7 +38,7 @@ namespace WNRY.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
+
             AppUser userIdentity = AccountsHelper.ConvertToDbObj(model);
 
             var result = await _userManager.CreateAsync(userIdentity, model.Password);
@@ -45,6 +47,12 @@ namespace WNRY.API.Controllers
 
             // Create ContacDetails if provided
             await this.contactDetailsService.Insert(model, userIdentity.Id);
+
+            if (model.Address != null)
+            {
+                await this.addressesService.Insert(model.Address, userIdentity.Id);
+            }
+
             // await _appDbContext.Customers.AddAsync(new Customer { IdentityId = userIdentity.Id, Location = model.Location });
             // await _appDbContext.SaveChangesAsync();
 

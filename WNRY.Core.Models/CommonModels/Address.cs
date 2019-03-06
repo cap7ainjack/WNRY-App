@@ -29,8 +29,10 @@ namespace WNRY.Models.CommonModels
         [MaxLength(4)]
         public string ZipCode { get; set; }
 
-        public AppUser User { get; set; }
+        public AppUser Identity { get; set; }
 
-        public Guid? UserId { get; set; }
+        // public Guid? UserId { get; set; }
+
+        public string IdentityId { get; set; }
     }
 }
