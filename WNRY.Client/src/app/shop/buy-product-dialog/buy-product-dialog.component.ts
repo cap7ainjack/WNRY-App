@@ -1,8 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ProductData } from '../models/product-data';
-import { CartItem } from '../models/cart-item';
-
+import { CartItem, ProductData } from '../../shared/models';
 
 @Component({
 	selector: 'buy-product-dialog',
@@ -13,7 +11,7 @@ export class BuyProductDialogComponent {
 	productQuantity = 1;
 	cartItem: CartItem = {
 		product: null,
-		quantity: 0
+		quantity: 1
 	};
 
 	constructor(

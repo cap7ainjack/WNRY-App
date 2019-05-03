@@ -32,6 +32,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CheckoutService } from './services/checkout.service';
+import { ProductService } from '../shared/services/product.service';
 
 @NgModule({
 	imports: [
@@ -39,7 +40,6 @@ import { CheckoutService } from './services/checkout.service';
 		FormsModule,
 		ReactiveFormsModule,
 		routing,
-		SharedModule,
 		MatCardModule,
 		MatGridListModule,
 		MatButtonModule,
@@ -50,7 +50,8 @@ import { CheckoutService } from './services/checkout.service';
 		MatFormFieldModule,
 		MatSelectModule,
 		MatCheckboxModule,
-		LayoutModule
+		LayoutModule,
+		SharedModule
 	],
 	declarations: [
 		ShopHomeComponent,
@@ -61,7 +62,7 @@ import { CheckoutService } from './services/checkout.service';
 		/* RootComponent, HomeComponent, SettingsComponent */
 	],
 	exports: [],
-	providers: [CheckoutService],
+	providers: [CheckoutService, ProductService],
 	entryComponents: [BuyProductDialogComponent]
 })
 export class ShopModule { }

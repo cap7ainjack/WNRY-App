@@ -17,15 +17,16 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 
 	public total = 0;
 	hidePassword = true;
-	regions: TextAndValueBox[] = []; // add interface
+	regions: TextAndValueBox[] = [];
 	registerUser = false;
+	invoice = false;
+	delivery = 5;
 
 	initialValue = '';
 	form: FormGroup;
-	// formControl = 'contact-details';
 
 	constructor(fb: FormBuilder, private service: CheckoutService, private userService: UserService) {
-		this.form = fb.group({
+		this.form = fb.group({ // TODO: Interface
 			email: new FormControl('', [Validators.required, Validators.email]),
 			name: new FormControl('', [Validators.required]),
 			phone: new FormControl('', [Validators.required]),
@@ -35,22 +36,37 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				city: new FormControl('', [Validators.required]),
 				addressLine: new FormControl('', [Validators.required]),
 				zipCode: new FormControl('', [Validators.required]),
-				country: new FormControl('', [Validators.required]),
-			})
+				country: new FormControl({ value: 'Bulgaria', disabled: true }, Validators.required),
+			}),
+			invoice: new FormControl(''),
+			invoiceDetails: fb.group({
+				companyName: new FormControl(''),
+				eik: new FormControl(''),
+				dds: new FormControl(''),
+				mol: new FormControl(''),
+				address: new FormControl(''),
+			}),
+			description: new FormControl('')
 		});
 	}
 
 	getErrorMessage() {
 		return this.form.controls['email'].hasError('email') ? 'Невалиден ел. адрес' : '';
 
-		 /* return this.form.controls['email'].hasError('required') ? 'You must enter a value' :
-						this.form.controls['email'].hasError('email') ? 'Not a valid email' :
-							''; */
+		/* return this.form.controls['email'].hasError('required') ? 'You must enter a value' :
+					   this.form.controls['email'].hasError('email') ? 'Not a valid email' :
+						   ''; */
 	}
 
 	createAccount(event: MatCheckboxChange) {
 		if (event) {
 			this.registerUser = event.checked;
+		}
+	}
+
+	createInvoice(event: MatCheckboxChange) {
+		if (event) {
+			this.invoice = event.checked;
 		}
 	}
 
@@ -64,32 +80,32 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 
 	register() {
 		if (this.form.valid && this.form.controls['password'] && this.form.controls['password'].value !== '') {
- 			this.userService.registerWithDetails(this.form.value)
-			.pipe(take(1))
-			.subscribe(
-				result => {
-					console.log(result);
-				},
-				error => {
-					console.log(error);
-				}
-			);
+			this.userService.registerWithDetails(this.form.value)
+				.pipe(take(1))
+				.subscribe(
+					result => {
+						console.log(result);
+					},
+					error => {
+						console.log(error);
+					}
+				);
 		}
 	}
 
 	onSelectorOpen() {
 		if (this.regions.length === 0) {
 			this.service.getRegions()
-			.pipe(take(1))
-			.subscribe(
-				result => {
-					console.log(result);
-					this.regions = result;
-				},
-				error => {
-					console.log(error);
-				}
-			);
+				.pipe(take(1))
+				.subscribe(
+					result => {
+						console.log(result);
+						this.regions = result;
+					},
+					error => {
+						console.log(error);
+					}
+				);
 		}
 	}
 

@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { ConfigService } from '../../shared/utils/config.service';
-
 import { BaseService } from '../../shared/services/base.service';
-
-import { Observable } from 'rxjs';
-import { CartItem } from '../models/cart-item';
-import { CartContent } from '../models/cart-content';
+import { CartContent } from '../../shared/models';
 
 
 @Injectable()

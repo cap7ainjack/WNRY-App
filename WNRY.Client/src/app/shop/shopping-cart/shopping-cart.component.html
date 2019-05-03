@@ -24,23 +24,23 @@
         <td data-th="Цена">{{element.product.price | number: '1.2-2'}} лв.</td>
         <td data-th="К-во">
             <div>
-                <button class="btn btn-secondary btn-sm" (click)="removeProduct(element.product.id)">-</button>   
+                <button class="btn btn-secondary btn-sm" (click)="substractProduct(element.product.id)">-</button>   
                 <span style="margin: 10px">{{element.quantity}}</span>
                 <button class="btn btn-danger btn-sm" (click)="addProduct(element.product.id)">+</button>
             </div>
         </td>
         <td data-th="Сума" class="text-center">{{(element.product.price * element.quantity) | number: '1.2-2'}} лв</td>
         <td class="actions" data-th="Изтриване">
-          <button class="btn btn-sm"><i class="fas fa-times"></i></button>
+          <button class="btn btn-sm" (click)="removeItem(element.product.id)"><i class="fas fa-times"></i></button>
         </td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td class="col-sm-4"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+        <td class="col-sm-4"><a routerLinkActive="active" routerLink="/shop" class="btn btn-warning"><i class="fa fa-angle-left"></i> Продължи пазаруването</a></td>
         <td class="col-sm-2"></td>
         <td class="col-sm-2" class="hidden-xs text-center"><strong>Обща сума: {{total | number: '1.2-2'}} лв.</strong></td>
-        <td class="col-sm-4"><a [routerLink]="['/checkout']" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+        <td class="col-sm-4"><a [routerLink]="['/checkout']" class="btn btn-success btn-block">Поръчай <i class="fa fa-angle-right"></i></a></td>
       </tr>
     </tfoot>
   </table>

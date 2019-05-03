@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { CartItem } from '../models/cart-item';
-// import { ProductService } from '../../services/product.service';
+import { CartItem } from '../../shared/models';
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
 	templateUrl: 'shopping-cart.component.html',
@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
-		// private productService: ProductService
+		private productService: ProductService
 	) { }
 
 	ngOnInit() {
@@ -77,16 +77,8 @@ export class CartComponent implements OnInit {
 		}
 	}
 
-	remove(id: string): void {
-		let cart: any = JSON.parse(localStorage.getItem('cart'))
-		for (let i = 0; i < cart.length; i++) {
-			let item: CartItem = JSON.parse(cart[i]);
-			if (item.product.id === id) {
-				cart.splice(i, 1);
-				break;
-			}
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
+	removeItem(id: string): void {
+		this.productService.removeItem(id);
 		this.loadCart();
 	}
 
@@ -104,7 +96,7 @@ export class CartComponent implements OnInit {
 		this.loadCart();
 	}
 
-	removeProduct(id: string) {
+	substractProduct(id: string) {
 		let cart: any = JSON.parse(localStorage.getItem('cart'))
 		for (let i = 0; i < cart.length; i++) {
 			let item: CartItem = JSON.parse(cart[i]);

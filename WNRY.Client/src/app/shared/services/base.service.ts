@@ -1,5 +1,5 @@
 
-import {throwError as observableThrowError,  Observable } from 'rxjs';
+import {throwError as observableThrowError } from 'rxjs';
 
 export abstract class BaseService {
 

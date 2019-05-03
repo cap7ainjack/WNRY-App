@@ -3,9 +3,9 @@
   <button mat-icon-button [matMenuTriggerFor]="menu" style="float:right; top:10px;">
     <mat-icon>account_circle</mat-icon>
   </button>
-  
+
   <button mat-icon-button href="#" routerLinkActive="active" routerLink="/cart" style="float:right; top:10px;">
-    <mat-icon>shopping_cart</mat-icon>
+    <mat-icon [matBadge]="productsInCart" matBadgeColor="accent">shopping_cart</mat-icon>
   </button>
 
   <mat-menu #menu="matMenu" [overlapTrigger]="false">
@@ -15,9 +15,9 @@
 
   <a href="javascript:void(0);" style="font-size:15px" class="icon" (click)="burgerMenu($event)">&#9776;</a>
   <ul>
-    <li ><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a></li>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/shop">Магазин</a></li>
     <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/info">За избата</a></li>
-    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/gallery">Галерия</a></li>
+    <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/gallery">Търговия с грозде</a></li>
     <li><a mat-button class="mat-button" href="#" routerLinkActive="active" routerLink="/contact">Контакти</a></li>
   </ul>
 

@@ -8,7 +8,6 @@ h3 {
 
 .total {
   margin: auto;
-  text-align: center;
   background-color: #ececec;
 }
 
@@ -20,3 +19,20 @@ h3 {
   .container > * {
     width: 100%;
   }
+
+  .header {
+    text-align: left
+  }
+
+  .headerValue {
+    text-align: right
+  }
+
+  tr {
+    border:hidden
+  }
+
+  .table[_ngcontent-c18] th[_ngcontent-c18], .table[_ngcontent-c18] td[_ngcontent-c18] {
+    padding: 1px
+  }
+  

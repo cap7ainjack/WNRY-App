@@ -1,5 +1,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+@import "theme.scss";
+@include mat-core();
+@include angular-material-theme($my-theme);
+
 .mat-focused .mat-form-field-label {
   color: rgba(184, 8, 8, 0.63) !important;
 }
@@ -12,6 +16,10 @@
   background-color: rgba(84, 86, 88, 0.719) !important;
 }
 
+.mat.form-field {
+  background-color: rgba(84, 86, 88, 0.719) !important;
+}
+
 .mat-ripple-element {
   background: rgba(27, 142, 241, .4) !important;
 }
@@ -21,16 +29,19 @@
 }
 
 
+
 html {
   overflow-x: hidden;
   background: #e7e7e7;
+
 }
 
-a, h3, h5 {
+/* a, h3, h5 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
-}
+} */
 
 body { 
+  font-family: 'Open Sans', sans-serif;
   max-width: 1360px;
   margin: auto;
   /* overflow-x: hidden; */

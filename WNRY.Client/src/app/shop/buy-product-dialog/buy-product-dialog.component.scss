@@ -1,4 +1,8 @@
-
+@import 'src/theme.scss';
+$primary: map-get($my-theme, primary);
+/* button {
+  background-color: mat-color($primary);
+} */
 
 .big-box {
     position: relative;
@@ -20,7 +24,7 @@
     transform: translate(-50%, -50%);
   }
 
-  div > button {
+  div.dialog-actions button {
     padding: 14px 100px; 
     background-color: rgba(184, 8, 8, 0.973);
     color: ivory;

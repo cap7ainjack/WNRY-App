@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { UserService } from '../shared/services/user.service';
+import { ProductService } from '../shared/services/product.service';
 
 @Component({
 	selector: 'app-header',
@@ -15,7 +16,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	subscription: Subscription;
 	navClass = 'navbar';
 
-	constructor(private userService: UserService) {
+	productsInCart = 0;
+
+	constructor(private userService: UserService, private productService: ProductService) {
 	}
 
 	logout() {
@@ -24,11 +27,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.subscription = this.userService.authNavStatus$.subscribe(status => this.status = status);
+
+		this.productsInCart = this.productService.getCartProductsCount();
+		this.productService.watchStorage().subscribe(count => {
+			if (count) {
+				this.productsInCart = count;
+			}
+		})
 	}
 
 	ngOnDestroy() {
-		// prevent memory leak when component is destroyed
-		this.subscription.unsubscribe();
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
 	}
 
 	burgerMenu(event) {

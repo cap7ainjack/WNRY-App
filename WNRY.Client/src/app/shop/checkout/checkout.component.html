@@ -1,70 +1,145 @@
 <h3>ПОРЪЧКА</h3>
 
 <div [formGroup]="form">
-    <div class="container">
+    <div class="container" style="margin: auto">
         <div class="row">
-            <div class="col-sm-4" style="margin: auto">
-                <mat-form-field>
-                    <input matInput placeholder="Име и фамилия:"  formControlName="name">
-                </mat-form-field>
+            <div class="col-lg">
+                <div class="row">
+                    <div class="col-sm">
+                        <mat-form-field>
+                            <input matInput placeholder="Име и фамилия:" formControlName="name">
+                        </mat-form-field>
 
-                <mat-form-field>
-                    <input matInput placeholder="Електронен адрес:" formControlName="email">
-                    <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Електронен адрес:" formControlName="email">
+                            <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
 
+                        <mat-form-field>
+                            <input matInput placeholder="Телефон за връзка:" formControlName="phone">
+                        </mat-form-field>
 
-                <mat-form-field>
-                    <input matInput placeholder="Телефон за връзка:" formControlName="phone">
-                </mat-form-field>
+                        <br>
+                        <mat-checkbox (change)="createAccount($event)">Създаване на профил</mat-checkbox>
+                        <br>
 
+                        <mat-form-field *ngIf="registerUser === true">
+                            <input matInput placeholder="Парола:" type="password" formControlName="password">
+                        </mat-form-field>
 
-                <mat-checkbox (change)="createAccount($event)">Създаване на профил</mat-checkbox>
-                <br>
+                        <div *ngIf="registerUser === true">
+                            <button type="button" class="btn btn-secondary" (click)="register()">Запази</button>
+                        </div>
+                    </div>
 
-                <mat-form-field *ngIf="registerUser === true">
-                    <input matInput placeholder="Парола:" type="password" formControlName="password">
-                </mat-form-field>
+                    <div class="col-sm" formGroupName="address">
+                        <mat-form-field>
+                            <mat-select placeholder="Държава:" formControlName="country">
+                                <mat-option value="Bulgaria">България</mat-option>
+                            </mat-select>
 
-                <div *ngIf="registerUser === true">
-                    <button type="button" class="btn btn-secondary" (click)="register()">Запази</button>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-select placeholder="Област:" formControlName="region"
+                                (openedChange)="onSelectorOpen()">
+                                <mat-option *ngIf="regions === null || !regions.length" disabled></mat-option>
+                                <mat-option *ngFor="let region of regions" [value]="region.value">{{region.text}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput placeholder="Населено място:" formControlName="city">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" placeholder="Адрес:"
+                                formControlName="addressLine"></textarea>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput placeholder="Пощенски код:" formControlName="zipCode">
+                        </mat-form-field>
+                    </div>
                 </div>
+                <hr> <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-checkbox (change)="createInvoice($event)" formControlName="invoice">Издаване на фактура
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <br> <br>
 
+                <div class="row" *ngIf="invoice" formGroupName="invoiceDetails">
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <input matInput placeholder="Име на фирма:" formControlName="companyName">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="ЕИК:" formControlName="eik">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="ДДС Номер:" formControlName="dds">
+                        </mat-form-field>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <input matInput placeholder="МОЛ:" formControlName="mol">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" placeholder="Адрес:"
+                                formControlName="address"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <hr *ngIf="invoice"> <br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <textarea matInput placeholder="Коментар:" formControlName="description"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-sm-4" formGroupName="address">
-                <mat-form-field>
-                    <mat-select placeholder="Държава:" formControlName="country">
-                        <mat-option value="Bulgaria">България</mat-option>
-                    </mat-select>
-                </mat-form-field>
+            <div class="col-lg" class="total" style="padding: 15px">
 
-                <mat-form-field>
-                    <mat-select placeholder="Област:" formControlName="region" (openedChange)="onSelectorOpen()" >
-                        <mat-option *ngIf="regions === null || !regions.length" disabled></mat-option>
-                        <mat-option *ngFor="let region of regions" [value]="region.value">{{region.text}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field>
-                        <input matInput placeholder="Населено място:" formControlName="city">
-                </mat-form-field>
-
-                <mat-form-field>
-                    <textarea matInput placeholder="Адрес:" formControlName="addressLine"></textarea>
-                </mat-form-field>
-
-                <mat-form-field>
-                        <input matInput placeholder="Пощенски код"  formControlName="zipCode">
-                </mat-form-field>
-            </div>
-
-            <div class="col-sm-4" class="total">
-                <h4>Обща сума: {{ total | number: '1.2-2'}} лв.</h4>
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <td class="header">Стойност на поръчката:</td>
+                            <td class="headerValue">{{ total | number: '1.2-2'}} лв.</td>
+                        </tr>
+                        <tr>
+                            <td class="header">Стойност на доставката:</td>
+                            <td class="headerValue">{{ delivery | number: '1.2-2' }} лв.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 45px" class="header">
+                                <h4>Обща сума:</h4>
+                            </td>
+                            <td style="padding-top: 45px" class="headerValue">
+                                <h4>{{ (total + delivery) | number: '1.2-2'}} лв.</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header" style="color:#7d7d7d; padding-top: 10px">Всички цени са с включен ДДС
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
 
+<a routerLinkActive="active" routerLink="/shop" class="btn btn-warning"><i class="fa fa-angle-left"></i> Продължи
+    пазаруването</a>
 <br>
 {{ form.value | json }}
