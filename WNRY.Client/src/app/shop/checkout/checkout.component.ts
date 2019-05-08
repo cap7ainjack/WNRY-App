@@ -6,6 +6,7 @@ import { CheckoutService } from '../services/checkout.service';
 import { take } from 'rxjs/operators';
 import { UserService } from '../../shared/services/user.service';
 import { TextAndValueBox } from '../../shared/models';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,8 +25,9 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 
 	initialValue = '';
 	form: FormGroup;
+	showInvalidFormMessage = false;
 
-	constructor(fb: FormBuilder, private service: CheckoutService, private userService: UserService) {
+	constructor(fb: FormBuilder, private service: CheckoutService, private userService: UserService, private router: Router) {
 		this.form = fb.group({ // TODO: Interface
 			email: new FormControl('', [Validators.required, Validators.email]),
 			name: new FormControl('', [Validators.required]),
@@ -35,7 +37,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				region: new FormControl('', [Validators.required]),
 				city: new FormControl('', [Validators.required]),
 				addressLine: new FormControl('', [Validators.required]),
-				zipCode: new FormControl('', [Validators.required]),
+				zipCode: new FormControl(''),
 				country: new FormControl({ value: 'Bulgaria', disabled: true }, Validators.required),
 			}),
 			invoice: new FormControl(''),
@@ -93,6 +95,19 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		}
 	}
 
+	proceedOrder() {
+		if (this.form.valid) {
+			this.showInvalidFormMessage = false;
+			console.log('VALID');
+			this.router.navigateByUrl('/complete');
+		} else {
+			this.scrollToTop();
+			this.showInvalidFormMessage = true;
+			this.markFormGroupTouched(this.form);
+			console.log('INvalid')
+		}
+	}
+
 	onSelectorOpen() {
 		if (this.regions.length === 0) {
 			this.service.getRegions()
@@ -121,5 +136,34 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 	}
 	registerOnTouched(fn: any): void {
 		throw new Error('Method not implemented.');
+	}
+
+	/**
+	 * Calls window function which will scroll to the top of the page
+	 */
+	private scrollToTop() {
+		(function smoothscroll() {
+			const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+			if (currentScroll > 0) {
+				window.requestAnimationFrame(smoothscroll);
+				window.scrollTo(0, currentScroll - (currentScroll / 8));
+			}
+		})();
+	}
+
+	/**
+  * Marks all controls in a form group as touched recursively (if any nested FormGroups)
+  * @param formGroup - The form group to touch
+  */
+	private markFormGroupTouched(formGroup: FormGroup) {
+		if (formGroup && formGroup.controls) {
+			(<any>Object).values(formGroup.controls).forEach(control => {
+				control.markAsTouched();
+
+				if (control.controls) {
+					this.markFormGroupTouched(control);
+				}
+			});
+		}
 	}
 }
