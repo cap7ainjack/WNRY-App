@@ -9,10 +9,10 @@ import { Component, OnInit  } from '@angular/core';
 export class ShopHomeComponent implements OnInit  {
 
 	productsToDisplay = [
-		{ id: '123', name: 'Hibiscus Flower', price: 8, img: 'https://static.wixstatic.com/media/f61af8_f1b4935e34bc45bbbc7c7e7f1d26e7ca~mv2_d_1776_1776_s_2.jpg/v1/fill/w_1040,h_840,q_85,usm_0.66_1.00_0.01/f61af8_f1b4935e34bc45bbbc7c7e7f1d26e7ca~mv2_d_1776_1776_s_2.jpg' },
-		{ id: '234', name: 'Chamomile Tea', price: 9, img: 'https://static.wixstatic.com/media/f61af8_cf15a1c505cf47d39071f0773d55babc~mv2_d_1776_1776_s_2.jpg/v1/fill/w_1040,h_840,q_85,usm_0.66_1.00_0.01/f61af8_cf15a1c505cf47d39071f0773d55babc~mv2_d_1776_1776_s_2.jpg' },
-		{ id: '345', name: 'Rosemary ', price: 11, img: 'https://static.wixstatic.com/media/f61af8_4cc4afe185164891bf60c5fda3eb8a97~mv2_d_1776_1776_s_2.jpg/v1/fill/w_1040,h_840,q_85,usm_0.66_1.00_0.01/f61af8_4cc4afe185164891bf60c5fda3eb8a97~mv2_d_1776_1776_s_2.jpg' },
-		{ id: '456', name: 'Raspberry Flower', price: 8, img: 'https://static.wixstatic.com/media/f61af8_c8640a46dfa04f29aa48d3ce483eb046~mv2_d_1776_1776_s_2.jpg/v1/fill/w_1040,h_840,q_85,usm_0.66_1.00_0.01/f61af8_c8640a46dfa04f29aa48d3ce483eb046~mv2_d_1776_1776_s_2.jpg' }
+		{ id: '123', name: 'Merlot', price: 11, img: 'https://i.ibb.co/ckmdNgN/5.jpg' },
+		{ id: '234', name: 'Cabernet Sauvignon', price: 11, img: 'https://i.ibb.co/1bdMmvp/cabernet-resized.jpg"' },
+		{ id: '345', name: 'Rose', price: 9, img: 'https://i.ibb.co/gghGqWM/rose-resized.jpg' },
+		{ id: '456', name: 'Chardonnay', price: 9, img: 'https://i.ibb.co/sbgkKjH/Chardonnay-resized.jpg' }
 	]
 
 	ngOnInit() {

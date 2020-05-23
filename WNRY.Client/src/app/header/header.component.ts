@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 		this.productsInCart = this.productService.getCartProductsCount();
 		this.productService.watchStorage().subscribe(count => {
-			if (count) {
+			if (count !== null && count !== undefined) {
 				this.productsInCart = count;
 			}
 		})

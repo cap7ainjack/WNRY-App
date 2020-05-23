@@ -36,7 +36,8 @@ export class ProductService extends BaseService {
     }
 
     removeItem(id: string): void {
-        let cart: any = JSON.parse(localStorage.getItem('cart'))
+        let cart: any[] = JSON.parse(localStorage.getItem('cart'))
+
         for (let i = 0; i < cart.length; i++) {
             let item: CartItem = JSON.parse(cart[i]);
             if (item.product.id === id) {
@@ -45,7 +46,6 @@ export class ProductService extends BaseService {
             }
         }
         localStorage.setItem('cart', JSON.stringify(cart));
-
         this.storageCountSubj.next(cart.length);
     }
 
