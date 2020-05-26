@@ -47,7 +47,7 @@
                             <mat-select placeholder="Област:" formControlName="region"
                                 (openedChange)="onSelectorOpen()">
                                 <mat-option *ngIf="regions === null || !regions.length" disabled></mat-option>
-                                <mat-option *ngFor="let region of regions" [value]="region.value">{{region.text}}
+                                <mat-option *ngFor="let region of regions" [value]="region">{{region.text}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
@@ -63,7 +63,7 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput placeholder="Пощенски код:" formControlName="zipCode">
+                            <input matInput placeholder="Пощенски код:" maxlength="4" formControlName="zipCode">
                         </mat-form-field>
                     </div>
                 </div>
@@ -82,10 +82,10 @@
                             <input matInput placeholder="Име на фирма:" formControlName="companyName">
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput placeholder="ЕИК:" formControlName="eik">
+                            <input matInput placeholder="ЕИК:" formControlName="bulstat">
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput placeholder="ДДС Номер:" formControlName="dds">
+                            <input matInput placeholder="ДДС Номер:" formControlName="vat">
                         </mat-form-field>
 
                     </div>

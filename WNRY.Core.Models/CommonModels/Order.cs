@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using WNRY.Models.Enums;
 using WNRY.Models.IdentityModels;
 
 namespace WNRY.Models.CommonModels
@@ -20,7 +21,7 @@ namespace WNRY.Models.CommonModels
 
         public DateTime? ShippingDate { get; set; }
 
-        public bool Completed { get; set; }
+        public OrderStatus Status { get; set; }
 
         [Required]
         public Address Address { get; set; }
@@ -34,7 +35,7 @@ namespace WNRY.Models.CommonModels
 
         public AppUser User { get; set; }
 
-        public Guid UserId { get; set; }
+        //public Guid? UserId { get; set; }
 
         public IEnumerable<XRefOrderProducts> OrderedProducts { get; set; }
     }

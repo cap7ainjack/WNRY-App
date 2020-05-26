@@ -7,6 +7,7 @@ import { take } from 'rxjs/operators';
 import { UserService } from '../../shared/services/user.service';
 import { TextAndValueBox } from '../../shared/models';
 import { Router } from '@angular/router';
+import { MAX_LENGTH_VALIDATOR } from '@angular/forms/src/directives/validators';
 
 
 @Component({
@@ -37,14 +38,14 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				region: new FormControl('', [Validators.required]),
 				city: new FormControl('', [Validators.required]),
 				addressLine: new FormControl('', [Validators.required]),
-				zipCode: new FormControl(''),
+				zipCode: new FormControl('', [Validators.required]),
 				country: new FormControl({ value: 'Bulgaria', disabled: true }, Validators.required),
 			}),
 			invoice: new FormControl(''),
 			invoiceDetails: fb.group({
 				companyName: new FormControl(''),
-				eik: new FormControl(''),
-				dds: new FormControl(''),
+				bulstat: new FormControl(''),
+				vat: new FormControl(''),
 				mol: new FormControl(''),
 				address: new FormControl(''),
 			}),
@@ -99,7 +100,17 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		if (this.form.valid) {
 			this.showInvalidFormMessage = false;
 			console.log('VALID');
-			this.router.navigateByUrl('/complete');
+			console.log(this.form.value);
+			this.service.placeOrder(this.form.value)
+				.pipe(take(1))
+				.subscribe(
+					result => {
+					console.log(result);
+					this.router.navigateByUrl('/complete');
+					},
+					error => {
+						console.log(error);
+					});
 		} else {
 			this.scrollToTop();
 			this.showInvalidFormMessage = true;

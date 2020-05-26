@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WNRY.Core.Data;
 
 namespace WNRY.Migrations.Migrations
 {
     [DbContext(typeof(WnryDbContext))]
-    partial class WnryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200524125618_OrderObjUserIdNull")]
+    partial class OrderObjUserIdNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -251,13 +253,13 @@ namespace WNRY.Migrations.Migrations
 
                     b.Property<Guid>("AddressId");
 
+                    b.Property<bool>("Completed");
+
                     b.Property<Guid>("ContactDetailsId");
 
                     b.Property<DateTime>("Date");
 
                     b.Property<DateTime?>("ShippingDate");
-
-                    b.Property<int>("Status");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(5, 2)");

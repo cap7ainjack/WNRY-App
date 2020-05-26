@@ -7,3 +7,4 @@ export * from './user-registration.interface';
 export * from './cart-content';
 export * from './cart-item';
 export * from './product-data';
+export * from './order/order';

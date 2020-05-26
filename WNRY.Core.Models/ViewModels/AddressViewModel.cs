@@ -8,6 +8,7 @@ namespace WNRY.Models.ViewModels
 {
     public class AddressViewModel
     {
+        [Required]
         public string AddressLine { get; set; }
 
         [Required]
@@ -17,6 +18,9 @@ namespace WNRY.Models.ViewModels
         public TextAndValueBox Region { get; set; }
 
         [Required]
+        [MaxLength(4)]
         public string ZipCode { get; set; }
+
+        // public string Country { get; set; }
     }
 }

@@ -23,7 +23,6 @@ using WNRY.Services.Utils;
 using WNRY.Core.Data.Interfaces;
 using WNRY.Services.Interfaces;
 using WNRY.Services;
-
 namespace WNRY.API
 {
     public class Startup
@@ -67,13 +66,13 @@ namespace WNRY.API
             services.AddTransient<IRegionService, RegionService>();
             services.AddTransient<IContactDetailsService, ContactDetailsService>();
             services.AddTransient<IAddressService, AddressService>();
-
+            services.AddTransient<IPlaceOrderService, PlaceOrderService>();
 
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
             // Register the ConfigurationBuilder instance of FacebookAuthSettings
-           //  services.Configure<FacebookAuthSettings>(Configuration.GetSection(nameof(FacebookAuthSettings)));
+            //  services.Configure<FacebookAuthSettings>(Configuration.GetSection(nameof(FacebookAuthSettings)));
 
             services.TryAddTransient<IHttpContextAccessor, HttpContextAccessor>();
 

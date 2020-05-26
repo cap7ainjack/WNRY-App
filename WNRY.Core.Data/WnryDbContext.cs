@@ -59,8 +59,6 @@ namespace WNRY.Core.Data
             modelBuilder.Entity<Region>().HasData(new Region { Name = "Хасково", Ekatte = "77195", ShortName = "HKV", Id = new Guid("F789D9CE-14CB-4271-B53C-70E947BA10D0") });
             modelBuilder.Entity<Region>().HasData(new Region { Name = "Шумен", Ekatte = "83510", ShortName = "SHU", Id = new Guid("706AF088-1FFF-4DC1-A1BB-4F34763E1B42") });
             modelBuilder.Entity<Region>().HasData(new Region { Name = "Ямбол", Ekatte = "87374", ShortName = "JAM", Id = new Guid("B2D507B5-F621-4FC0-9BD2-C41AD2D73C2F") });
-
-
         }
     }
 }

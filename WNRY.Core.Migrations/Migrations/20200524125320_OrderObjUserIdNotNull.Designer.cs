@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WNRY.Core.Data;
 
 namespace WNRY.Migrations.Migrations
 {
     [DbContext(typeof(WnryDbContext))]
-    partial class WnryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200524125320_OrderObjUserIdNotNull")]
+    partial class OrderObjUserIdNotNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -251,18 +253,20 @@ namespace WNRY.Migrations.Migrations
 
                     b.Property<Guid>("AddressId");
 
+                    b.Property<bool>("Completed");
+
                     b.Property<Guid>("ContactDetailsId");
 
                     b.Property<DateTime>("Date");
 
                     b.Property<DateTime?>("ShippingDate");
 
-                    b.Property<int>("Status");
-
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(5, 2)");
 
-                    b.Property<string>("UserId");
+                    b.Property<Guid?>("UserId");
+
+                    b.Property<string>("UserId1");
 
                     b.HasKey("Id");
 
@@ -270,7 +274,7 @@ namespace WNRY.Migrations.Migrations
 
                     b.HasIndex("ContactDetailsId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Orders");
                 });
@@ -630,7 +634,7 @@ namespace WNRY.Migrations.Migrations
 
                     b.HasOne("WNRY.Models.IdentityModels.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("WNRY.Models.CommonModels.XRefOrderProducts", b =>

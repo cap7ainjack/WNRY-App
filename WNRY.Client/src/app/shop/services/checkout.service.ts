@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ConfigService } from '../../shared/utils/config.service';
 import { BaseService } from '../../shared/services/base.service';
-import { CartContent } from '../../shared/models';
+import { CartContent, Order } from '../../shared/models';
 
 
 @Injectable()
@@ -20,6 +20,12 @@ export class CheckoutService extends BaseService {
 
 	public getRegions(): Observable<any> { // export to shared service
 		return this.http.get(this.baseUrl + '/Regions');
+	}
+
+	public placeOrder(value: Order): Observable<any> {
+		if (value !== undefined && value !== null) {
+			return this.http.post(this.baseUrl + '/Order', value);
+		}
 	}
 
 	loadCart(): CartContent {
