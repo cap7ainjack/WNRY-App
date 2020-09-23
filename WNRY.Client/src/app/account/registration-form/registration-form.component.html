@@ -1,39 +1,48 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Please enter your information</h2>
+<h3>РЕГИСТРАЦИЯ</h3>
+
+<h6 *ngIf="showInvalidFormMessage" style="color:red; text-align:center">Моля, попълнете всички задължителни полета</h6>
+<br>
+<div [formGroup]="form">
+  <div class="container" style="margin: auto">
+    <div class="row justify-content-center">
+            <mat-form-field>
+              <input matInput placeholder="Име и фамилия:" formControlName="name">
+            </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center">
+      <mat-form-field>
+        <input matInput placeholder="Електронен адрес:" formControlName="email">
+        <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center">
+      <mat-form-field>
+        <input matInput placeholder="Телефон за връзка:" formControlName="phone">
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center">
+      <mat-form-field>
+        <input matInput placeholder="Парола:" type="password" formControlName="password">
+        <mat-error *ngIf="form.controls['password'].invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <br>
+    <div class="row justify-content-center">
+      <button type="button" class="btn btn-secondary" (click)="registerUser()">Създай профил</button>
+    </div>
+
+    <br><br>
+
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-      <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
-          <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Full name" name="name" tmFocus ngModel>              
-          </div>
-          <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="text" class="form-control" id="last-name" placeholder="Phone" name="phone" ngModel>              
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-          	<input id="email" type="text" required name="email" validateEmail class="form-control" placeholder="Email" ngModel  #email="ngModel">
-            <small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel>
-          </div> 
-          
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Sign Up</button>
-              <app-spinner [isRunning]="isRequesting"></app-spinner> 
-          </div>
-
-          <div *ngIf="errors" class="alert alert-danger" role="alert">
-              <strong>Oops!</strong> {{errors}}
-            </div>               
-          
-        </form>
-   </div>
+<div *ngIf="errors" class="alert alert-danger" role="alert">
+  <strong>Oops!</strong>
+  <div style="color: red;" *ngFor="let item of errors | keyvalue">
+    {{item.value}}
+  </div>
 </div>

@@ -33,6 +33,7 @@ import { CartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CheckoutService } from './services/checkout.service';
 import { ProductService } from '../shared/services/product.service';
+import { FormsHelperService } from '../shared/services/forms.helper.service';
 import { CompletedOrderComponent } from './completed-order/completed-order.component';
 
 @NgModule({
@@ -64,7 +65,7 @@ import { CompletedOrderComponent } from './completed-order/completed-order.compo
 		/* RootComponent, HomeComponent, SettingsComponent */
 	],
 	exports: [],
-	providers: [CheckoutService, ProductService],
+	providers: [CheckoutService, ProductService, FormsHelperService],
 	entryComponents: [BuyProductDialogComponent]
 })
 export class ShopModule { }

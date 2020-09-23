@@ -41,10 +41,7 @@ export class UserService extends BaseService {
 			})
 		}
 
-		return this.http.post(this.baseUrl + '/accounts', body, httpOptions)
-			.pipe(
-				map(res => true),
-				catchError(this.handleError));
+		return this.http.post(this.baseUrl + '/accounts', body, httpOptions);
 	}
 
 	registerWithDetails(data: any) {

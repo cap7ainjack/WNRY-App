@@ -78,4 +78,8 @@ export class ProductService extends BaseService {
         }
         this.storageCountSubj.next(cart.length);
     }
+
+    loadProducts() {
+		return this.http.get(this.baseUrl + '/Products');
+    }
 }

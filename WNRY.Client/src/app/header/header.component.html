@@ -9,7 +9,8 @@
   </button>
 
   <mat-menu #menu="matMenu" [overlapTrigger]="false">
-    <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/login">Вписване</a>
+    <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/login">Вход</a>
+    <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/register">Регистрация</a>
     <button mat-menu-item *ngIf="status" class="mat-button" (click)="logout()">Отписване</button>
   </mat-menu>
 

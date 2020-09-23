@@ -31,6 +31,8 @@ namespace WNRY.Models.CommonModels
 
         public string PhotoUrl { get; set; }
 
+        public string DisplayName { get; set; }
+
         public IEnumerable<XRefOrderProducts> Orders { get; set; }
     }
 }

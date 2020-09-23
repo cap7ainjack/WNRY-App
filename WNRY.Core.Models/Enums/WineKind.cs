@@ -7,7 +7,7 @@ namespace WNRY.Models.Enums
     public enum WineKind
     {
         Merlot = 1,
-        Cabernet = 2,
+        CabernetSauvignon = 2,
         Ruby = 3,
         Pamid = 4,
         Chardonnay = 5,

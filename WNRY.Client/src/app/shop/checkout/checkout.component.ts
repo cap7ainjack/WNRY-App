@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder, ControlValueAccessor } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material';
+import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { CheckoutService } from '../services/checkout.service';
-import { take } from 'rxjs/operators';
+import { FormsHelperService } from '../../shared/services/forms.helper.service';
 import { UserService } from '../../shared/services/user.service';
 import { TextAndValueBox } from '../../shared/models';
-import { Router } from '@angular/router';
-import { MAX_LENGTH_VALIDATOR } from '@angular/forms/src/directives/validators';
-
 
 @Component({
 	selector: 'checkout',
@@ -28,12 +27,17 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 	form: FormGroup;
 	showInvalidFormMessage = false;
 
-	constructor(fb: FormBuilder, private service: CheckoutService, private userService: UserService, private router: Router) {
+	constructor(
+		fb: FormBuilder,
+		private service: CheckoutService,
+		private userService: UserService,
+		private router: Router,
+		private formHelper: FormsHelperService) {
 		this.form = fb.group({ // TODO: Interface
 			email: new FormControl('', [Validators.required, Validators.email]),
 			name: new FormControl('', [Validators.required]),
 			phone: new FormControl('', [Validators.required]),
-			password: new FormControl(''),
+			password: new FormControl('', [Validators.minLength(6)]),
 			address: fb.group({
 				region: new FormControl('', [Validators.required]),
 				city: new FormControl('', [Validators.required]),
@@ -53,12 +57,12 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		});
 	}
 
-	getErrorMessage() {
-		return this.form.controls['email'].hasError('email') ? 'Невалиден ел. адрес' : '';
+	getErrorMessage(formControlName: string) {
+		return this.formHelper.getErrorMessage(formControlName);
 
 		/* return this.form.controls['email'].hasError('required') ? 'You must enter a value' :
-					   this.form.controls['email'].hasError('email') ? 'Not a valid email' :
-						   ''; */
+			   this.form.controls['email'].hasError('email') ? 'Not a valid email' :
+				   ''; */
 	}
 
 	createAccount(event: MatCheckboxChange) {
@@ -105,8 +109,8 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				.pipe(take(1))
 				.subscribe(
 					result => {
-					console.log(result);
-					this.router.navigateByUrl('/complete');
+						console.log(result);
+						this.router.navigateByUrl('/complete');
 					},
 					error => {
 						console.log(error);
@@ -114,7 +118,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		} else {
 			this.scrollToTop();
 			this.showInvalidFormMessage = true;
-			this.markFormGroupTouched(this.form);
+			this.formHelper.markFormGroupTouched(this.form);
 			console.log('INvalid')
 		}
 	}
@@ -160,21 +164,5 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				window.scrollTo(0, currentScroll - (currentScroll / 8));
 			}
 		})();
-	}
-
-	/**
-  * Marks all controls in a form group as touched recursively (if any nested FormGroups)
-  * @param formGroup - The form group to touch
-  */
-	private markFormGroupTouched(formGroup: FormGroup) {
-		if (formGroup && formGroup.controls) {
-			(<any>Object).values(formGroup.controls).forEach(control => {
-				control.markAsTouched();
-
-				if (control.controls) {
-					this.markFormGroupTouched(control);
-				}
-			});
-		}
 	}
 }

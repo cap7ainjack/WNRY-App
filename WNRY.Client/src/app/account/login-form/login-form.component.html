@@ -1,40 +1,38 @@
 
+<h3>ВХОД В ПРОФИЛА</h3>
 
-<header-image imageSrc="http://ottmurphywines.com/wp-stuff/uploads/2012/11/Screen-Shot-2017-04-25-at-4.31.14-PM.png">
-</header-image>
+<h6 *ngIf="showInvalidFormMessage" style="color:red; text-align:center">Моля, попълнете всички задължителни полета</h6>
+<br>
+<div [formGroup]="form">
+  <div class="container" style="margin: auto">
 
-<div class="row">
-  <div class="col-md-6 new-user-alert">
-      <div *ngIf="brandNew" class="alert alert-success" role="alert">
-          <strong>All set!</strong> Please login with your account
-      </div>  
-      <h2>Login</h2>        
+    <div class="row justify-content-center">
+      <mat-form-field>
+        <input matInput placeholder="Електронен адрес:" formControlName="email">
+        <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center">
+      <mat-form-field>
+        <input matInput placeholder="Парола:" type="password" formControlName="password">
+        <mat-error *ngIf="form.controls['password'].invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <br>
+    <div class="row justify-content-center">
+      <button type="button" class="btn btn-secondary" (click)="login()">Вход</button>
+    </div>
+
+    <br><br>
+
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-      <form #f="ngForm" novalidate (ngSubmit)="login(f)">
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="text" required name="email" class="form-control" placeholder="Email" [ngModel]="credentials.email" #email="ngModel" tmFocus validateEmail>
-            <small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" required name="password" placeholder="Password" ngModel>
-          </div>          
-
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Login</button>
-              <app-spinner [isRunning]="isRequesting"></app-spinner> 
-          </div>
-
-          <div *ngIf="errors" class="alert alert-danger" role="alert">
-              <strong>Oops!</strong> {{errors}}
-            </div> 
-          
-        </form>
-   </div>
+<div *ngIf="errors" class="alert alert-danger" role="alert">
+  <strong>Oops!</strong>
+  <div style="color: red;" *ngFor="let item of errors | keyvalue">
+    {{item.value}}
+  </div>
 </div>

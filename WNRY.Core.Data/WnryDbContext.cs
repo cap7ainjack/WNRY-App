@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using WNRY.Models.CommonModels;
+using WNRY.Models.Enums;
 using WNRY.Models.IdentityModels;
 
 namespace WNRY.Core.Data
@@ -59,6 +60,59 @@ namespace WNRY.Core.Data
             modelBuilder.Entity<Region>().HasData(new Region { Name = "Хасково", Ekatte = "77195", ShortName = "HKV", Id = new Guid("F789D9CE-14CB-4271-B53C-70E947BA10D0") });
             modelBuilder.Entity<Region>().HasData(new Region { Name = "Шумен", Ekatte = "83510", ShortName = "SHU", Id = new Guid("706AF088-1FFF-4DC1-A1BB-4F34763E1B42") });
             modelBuilder.Entity<Region>().HasData(new Region { Name = "Ямбол", Ekatte = "87374", ShortName = "JAM", Id = new Guid("B2D507B5-F621-4FC0-9BD2-C41AD2D73C2F") });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Kind = WineKind.Merlot,
+                WineColor = WineColor.Red,
+                Size = 0.7,
+                BottleKind = BottleKind.Glass,
+                PhotoUrl = "https://i.ibb.co/ckmdNgN/5.jpg",
+                Price = 11m,
+                Description = "Description here...",
+                Id = new Guid("C51E8CE1-C6CC-4F08-86BD-E5016EFA00BF"),
+                DisplayName = "Merlot"
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Kind = WineKind.CabernetSauvignon,
+                WineColor = WineColor.Red,
+                Size = 0.7,
+                BottleKind = BottleKind.Glass,
+                PhotoUrl = "https://i.ibb.co/1bdMmvp/cabernet-resized.jpg",
+                Price = 11m,
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                Id = new Guid("FBDEB80E-8348-4233-99B7-0C79780398AA"),
+                DisplayName = "Cabernet Sauvignon"
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Kind = WineKind.Rose,
+                WineColor = WineColor.Rose,
+                Size = 0.7,
+                BottleKind = BottleKind.Glass,
+                PhotoUrl = "https://i.ibb.co/gghGqWM/rose-resized.jpg",
+                Price = 9m,
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                Id = new Guid("32E90A4A-9955-42F6-B172-12296CDEE653"),
+                DisplayName = "Rose"
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Kind = WineKind.Chardonnay,
+                WineColor = WineColor.White,
+                Size = 0.7,
+                BottleKind = BottleKind.Glass,
+                PhotoUrl = "https://i.ibb.co/sbgkKjH/Chardonnay-resized.jpg",
+                Price = 9m,
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                Id = new Guid("FF8FFE32-2E84-4C4F-9205-49794FBDF5B7"),
+                DisplayName = "Chardonnay"
+            });
+
         }
     }
 }

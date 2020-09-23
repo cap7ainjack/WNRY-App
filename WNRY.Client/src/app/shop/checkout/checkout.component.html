@@ -15,7 +15,7 @@
 
                         <mat-form-field>
                             <input matInput placeholder="Електронен адрес:" formControlName="email">
-                            <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
+                            <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage("email")}}</mat-error>
                         </mat-form-field>
 
                         <mat-form-field>
@@ -28,6 +28,7 @@
 
                         <mat-form-field *ngIf="registerUser === true">
                             <input matInput placeholder="Парола:" type="password" formControlName="password">
+                            <mat-error *ngIf="form.controls['password'].invalid">{{getErrorMessage("password")}}</mat-error>
                         </mat-form-field>
 
                         <div *ngIf="registerUser === true">
