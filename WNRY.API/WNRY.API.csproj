@@ -25,6 +25,7 @@
     <ProjectReference Include="..\WNRY.Core.Migrations\WNRY.Migrations.csproj" />
     <ProjectReference Include="..\WNRY.Core.Models\WNRY.Models.csproj" />
     <ProjectReference Include="..\WNRY.Services\WNRY.Services.csproj" />
+    <ProjectReference Include="..\WNRY.Utils\WNRY.Utils.csproj" />
   </ItemGroup>
 
 </Project>

@@ -24,8 +24,26 @@ export class CheckoutService extends BaseService {
 
 	public placeOrder(value: Order): Observable<any> {
 		if (value !== undefined && value !== null) {
-			return this.http.post(this.baseUrl + '/Order', value);
+			let orderWithProducts = this.addProductsToTheOrder(value);
+			return this.http.post(this.baseUrl + '/Order', orderWithProducts);
 		}
+	}
+
+	private addProductsToTheOrder(order: Order): Order {
+		let cart = JSON.parse(localStorage.getItem('cart'));
+		if (cart) {
+			order.products = [];
+			for (let i = 0; i < cart.length; i++) {
+				let item = JSON.parse(cart[i]);
+				order.products.push({
+					id: item.product.id,
+					quantity: item.quantity
+				});
+				//	this.total += item.product.price * item.quantity;
+			}
+		}
+
+		return order;
 	}
 
 	loadCart(): CartContent {

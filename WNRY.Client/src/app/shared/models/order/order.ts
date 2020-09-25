@@ -14,7 +14,15 @@ export interface Order {
     invoice: boolean;
 
     description: string;
+
+    products: OrderProduct[];
 };
+
+export interface OrderProduct{
+    id: string;
+
+    quantity: number;
+}
 
 export interface Address {
     addressLine: string;

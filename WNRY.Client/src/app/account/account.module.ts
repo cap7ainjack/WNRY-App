@@ -9,8 +9,11 @@ import { FormsHelperService } from '../shared/services/forms.helper.service';
 import { EmailValidator } from '../directives/email.validator.directive';
 
 import { routing } from './account.routing';
+
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { UserProfileComponent  } from './user-profile/user-profile-main/user-profile.component';
+import { UserProfileInfoComponent } from './user-profile/user-profile-info/user-profile-info.component';
 
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
@@ -35,7 +38,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatSelectModule,
     MatCheckboxModule,
   ],
-  declarations: [RegistrationFormComponent, EmailValidator, LoginFormComponent, /* FacebookLoginComponent */],
+  declarations: [RegistrationFormComponent, EmailValidator, LoginFormComponent,
+    UserProfileComponent, UserProfileInfoComponent /* FacebookLoginComponent */],
   providers: [UserService, FormsHelperService]
 })
 export class AccountModule { }

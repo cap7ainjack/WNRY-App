@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using WNRY.Core.Data.Interfaces;
 using WNRY.Models.ViewModels;
@@ -18,7 +19,21 @@ namespace WNRY.Services
 
         public IEnumerable<ProductVM> GetAll()
         {
-            throw new NotImplementedException();
+            var products = this._productsRepository
+                .All()
+                .Select(z => new ProductVM()
+                {
+                    Id = z.Id,
+                    Price = z.Price,
+                    PhotoUrl = z.PhotoUrl,
+                    DisplayName = z.DisplayName,
+                    WineColor = z.WineColor,
+                    Description = z.Description,
+                    Kind = z.Kind,
+                    Size = z.Size
+                });
+
+            return products;
         }
     }
 }

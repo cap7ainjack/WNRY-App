@@ -22,27 +22,50 @@ namespace WNRY.Services
             // TODO: Create user if needed
             // TODO: Order for logged user
 
-            if (vm.Address != null && vm.Address.Region != null && !string.IsNullOrEmpty(vm.Name) && !string.IsNullOrEmpty(vm.Email) && !string.IsNullOrEmpty(vm.Phone))
+            if (vm.Address != null && vm.Address.Region != null
+                    && !string.IsNullOrEmpty(vm.Name) && !string.IsNullOrEmpty(vm.Email)
+                    && !string.IsNullOrEmpty(vm.Phone)
+                    && vm.Products?.Any() == true)
             {
+
                 Order orderToInsert = new Order()
                 {
                     Id = Guid.NewGuid(),
                     Date = DateTime.Now,
-                    Status = Models.Enums.OrderStatus.New,
-                    
+                    Status = Models.Enums.OrderStatus.New,                   
                 };
 
                 // In case of Guest
                 this.AddAddressObje(orderToInsert, vm);
                 this.AddContactDetails(orderToInsert, vm);
 
+                this.AddProductsToOrder(orderToInsert, vm);
+
                 this._dbContext.Orders.Add(orderToInsert);
                 this._dbContext.SaveChanges();
+
+                // sent e-mail
 
                 return true;
             }
 
             return false;
+        }
+
+        private void AddProductsToOrder(Order orderToInsert, PlaceOrderVM vm)
+        {
+            foreach (OrderProductVm item in vm.Products)
+            {
+                XRefOrderProducts toIns = new XRefOrderProducts()
+                {
+                    Id = Guid.NewGuid(),
+                    OrderId = orderToInsert.Id,
+                    ProductId = item.Id,
+                    Quantity = item.Quantity,
+
+                };
+                this._dbContext.XRefOrderProducts.Add(toIns);
+            }
         }
 
         private void AddContactDetails(Order orderToInsert, PlaceOrderVM vm)

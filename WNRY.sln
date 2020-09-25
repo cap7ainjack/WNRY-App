@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Core.Data", "WNRY.Core.Data\WNRY.Core.Data.csproj", "{1FAC71AE-2BCC-4B47-A187-786AC96B5129}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Models", "WNRY.Core.Models\WNRY.Models.csproj", "{CDA0EDDD-CD64-4094-8181-8396C4327F92}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Services", "WNRY.Services\WNRY.Services.csproj", "{60A747FE-B2D1-4440-8242-7240DD91FA9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNRY.Utils", "WNRY.Utils\WNRY.Utils.csproj", "{BBC2FC10-6181-4940-A15E-FD3C869B8098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{60A747FE-B2D1-4440-8242-7240DD91FA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60A747FE-B2D1-4440-8242-7240DD91FA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60A747FE-B2D1-4440-8242-7240DD91FA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

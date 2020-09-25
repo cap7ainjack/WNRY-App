@@ -1,10 +1,10 @@
 <mat-grid-list *ngIf="columnsToShow > 0" [cols]="columnsToShow" rowHeight="1:1">
     <mat-grid-tile *ngFor="let item of products">
         <mat-card class="example-card" (click)=addToCart(item)>
-            <img class="card-image" mat-card-image [src]=item.img>
+            <img class="card-image" mat-card-image [src]=item.photoUrl>
 
             <mat-card-content>
-                <h6> {{item.name}}</h6>
+                <h6> {{item.displayName}}</h6>
                 <p>{{item.price | number: '1.2-2'}} лв.</p>
             </mat-card-content>
 

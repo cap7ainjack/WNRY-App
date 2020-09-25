@@ -14,7 +14,6 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using WNRY.API.Utils;
 using WNRY.Core.Data;
 using WNRY.Models.IdentityModels;
@@ -23,6 +22,9 @@ using WNRY.Services.Utils;
 using WNRY.Core.Data.Interfaces;
 using WNRY.Services.Interfaces;
 using WNRY.Services;
+using WNRY.Utils.MailKit;
+using WNRY.Utils.MailKit.Models;
+
 namespace WNRY.API
 {
     public class Startup
@@ -61,15 +63,20 @@ namespace WNRY.API
             services.AddScoped(typeof(IRegionRepository), typeof(RegionsRepository));
             services.AddScoped(typeof(IContactDetailsRepository), typeof(ContactDetailsRepository));
             services.AddScoped(typeof(IAddressesRepository), typeof(AddressesRepository));
+            services.AddScoped(typeof(IProductsRepository), typeof(ProductsRepository));
 
             // Application  Services
             services.AddTransient<IRegionService, RegionService>();
             services.AddTransient<IContactDetailsService, ContactDetailsService>();
             services.AddTransient<IAddressService, AddressService>();
             services.AddTransient<IPlaceOrderService, PlaceOrderService>();
+            services.AddTransient<IProductService, ProductService>();
 
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
+
+            services.Configure<SmtpSettings>(Configuration.GetSection("SmtpSettings"));
+            services.AddSingleton<IMailer, WnryMailService>();
 
             // Register the ConfigurationBuilder instance of FacebookAuthSettings
             //  services.Configure<FacebookAuthSettings>(Configuration.GetSection(nameof(FacebookAuthSettings)));

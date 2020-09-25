@@ -17,7 +17,7 @@ import { ProductData, CartItem } from '../../shared/models';
 	styleUrls: ['../shop-component.scss']
 })
 export class ProductGridComponent implements OnInit {
-	@Input('products') products: any;
+	@Input('products') products: ProductData[];
 
 	columnsToShow = 0;
 
@@ -47,7 +47,7 @@ export class ProductGridComponent implements OnInit {
 		const dialogRef = this.dialog.open(BuyProductDialogComponent, {
 			maxHeight: '700px',
 			maxWidth: '800px',
-			data: { name: item.name, id: item.id, img: item.img, price: item.price }
+			data: { name: item.displayName, id: item.id, photoUrl: item.photoUrl, price: item.price }
 		});
 
 		dialogRef.afterClosed().subscribe((itemToAdd: CartItem) => { // TODO: Clear local storage cart item at some point

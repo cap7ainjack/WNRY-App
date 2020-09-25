@@ -1,4 +1,6 @@
-﻿namespace WNRY.Models.ViewModels
+﻿using System.Collections.Generic;
+
+namespace WNRY.Models.ViewModels
 {
     public class PlaceOrderVM
     {
@@ -17,5 +19,7 @@
         public bool? Invoice { get; set; }
 
         public string Description { get; set; }
+
+        public IEnumerable<OrderProductVm> Products { get; set; }
     }
 }
