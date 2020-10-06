@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WNRY.Core.Data\WNRY.Core.Data.csproj" />
     <ProjectReference Include="..\WNRY.Core.Models\WNRY.Models.csproj" />
+    <ProjectReference Include="..\WNRY.Utils\WNRY.Utils.csproj" />
   </ItemGroup>
 
 </Project>

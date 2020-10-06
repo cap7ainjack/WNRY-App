@@ -17,6 +17,8 @@ namespace WNRY.Utils.MailKit
     {
         private readonly SmtpSettings _smtpSettings;
 
+
+        private string _defaultSubject = "Нова поръчка във винарна Моралиев";
         public WnryMailService(IOptions<SmtpSettings> smtpSettings)
         {
             _smtpSettings = smtpSettings.Value;
@@ -42,6 +44,10 @@ namespace WNRY.Utils.MailKit
                     //if (_env.IsDevelopment())
                     //{
                     //    await client.ConnectAsync(_smtpSettings.Server, _smtpSettings.Port, true);
+                    //}
+                    // else
+                    // {
+                    //await client.ConnectAsync(_smtpSettings.Server);
                     //}
                     await client.ConnectAsync(_smtpSettings.Server);
 
