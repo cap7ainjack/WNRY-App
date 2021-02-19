@@ -71,11 +71,11 @@ namespace WNRY.Services
         private string GenerateMailBody(PlaceOrderVM vm, Guid id)
         {
             string result = string.Empty;
-            int deliveryPrice = 5; // TODO: Calculate delivery dinamically
 
             string htmlBodyTemplateFilePath = @"C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Utils\Files\email_order_template_placeholders.txt";
             string htmlProductTemplate = @"C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Utils\Files\Product_template.txt";
             string htmlAddressTemplate = @"C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Utils\Files\address_template.txt";
+            string htmlInvoiceTemplate = @"C:\Users\botsa\source\repos\WNRY\WNRY-App.git\WNRY.Utils\Files\invoiceDetails.txt";
 
             if (File.Exists(htmlBodyTemplateFilePath))
             {
@@ -99,7 +99,7 @@ namespace WNRY.Services
 
                 string deliveruProductTemplate = File.ReadAllText(htmlProductTemplate);
                 string deliveryReplacedProductTemplate = deliveruProductTemplate.Replace("{{{name}}}", "Доставка");
-                deliveryReplacedProductTemplate = deliveryReplacedProductTemplate.Replace("{{{price}}}", deliveryPrice.ToString());
+                deliveryReplacedProductTemplate = deliveryReplacedProductTemplate.Replace("{{{price}}}", vm.Shipping.ToString());
 
                 sb.AppendLine(deliveryReplacedProductTemplate);
 
@@ -107,7 +107,7 @@ namespace WNRY.Services
 
 
                 // ADD Total price
-                decimal totalPrice = this.GetTotalOrderPrice(products, vm.Products, deliveryPrice);
+                decimal totalPrice = this.GetTotalOrderPrice(products, vm.Products, vm.Shipping);
                 text = text.Replace("{{{total}}}", totalPrice.ToString() + " лв.");
 
 
@@ -123,6 +123,19 @@ namespace WNRY.Services
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", vm.Address.AddressLine));
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Телефон: " + vm.Phone));
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Плащане: Наложен платеж"));
+                    addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Коментар: " + vm.Description));
+
+                    if (vm.Invoice.HasValue && vm.Invoice.Value && vm.InvoiceDetails != null)
+                    {
+                        string invoiceTemplate = File.ReadAllText(htmlInvoiceTemplate);
+
+                        addressSb.AppendLine(invoiceTemplate.Replace("{{{invoice}}}", "Фактура: "));
+                        addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Фирма: " + vm.InvoiceDetails.CompanyName));
+                        addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "ЕИК: " + vm.InvoiceDetails.Bulstat));
+                        addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "ДДС Номер: " + vm.InvoiceDetails.Vat));
+                        addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "МОЛ: " + vm.InvoiceDetails.Mol));
+                        addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Адрес: " + vm.InvoiceDetails.Address));
+                    }
 
                     text = text.Replace("{{{address}}}", addressSb.ToString());
                 }
@@ -133,7 +146,7 @@ namespace WNRY.Services
             return result;
         }
 
-        private decimal GetTotalOrderPrice(IEnumerable<Product> products1, IEnumerable<OrderProductVm> products2, int deliveryPrice)
+        private decimal GetTotalOrderPrice(IEnumerable<Product> products1, IEnumerable<OrderProductVm> products2, decimal deliveryPrice)
         {
             decimal result = 0;
             foreach (var item in products2)

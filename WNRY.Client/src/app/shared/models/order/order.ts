@@ -15,6 +15,8 @@ export interface Order {
 
     description: string;
 
+    shipping: number;
+
     products: OrderProduct[];
 };
 

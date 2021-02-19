@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { CheckoutService } from '../services/checkout.service';
 import { FormsHelperService } from '../../shared/services/forms.helper.service';
 import { UserService } from '../../shared/services/user.service';
-import { TextAndValueBox } from '../../shared/models';
+import { Order, TextAndValueBox } from '../../shared/models';
 import { ProductService } from '../../shared/services/product.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 	regions: TextAndValueBox[] = [];
 	registerUser = false;
 	invoice = false;
-	delivery = 5;
+	shippingPrice = 0;
 
 	initialValue = '';
 	form: FormGroup;
@@ -85,7 +85,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 			this.total = cartContent.total;
 			console.log(cartContent.items);
 			let totalItems = this.productsService.calcCartTotalItems();
-			this.delivery = this.service.calculateShipping(cartContent.weight, totalItems);
+			this.shippingPrice = this.service.calculateShipping(cartContent.weight, totalItems);
 		}
 		// this.form.controls['country'].patchValue('България')
 	}
@@ -109,8 +109,9 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		if (this.form.valid) {
 			this.showInvalidFormMessage = false;
 			console.log('VALID');
-			console.log(this.form.value);
-			this.service.placeOrder(this.form.value)
+			let order: Order = this.form.value;
+			order.shipping = this.shippingPrice;
+			this.service.placeOrder(order)
 				.pipe(take(1))
 				.subscribe(
 					result => {

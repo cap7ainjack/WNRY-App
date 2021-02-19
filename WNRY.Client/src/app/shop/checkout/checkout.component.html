@@ -122,14 +122,14 @@
                         </tr>
                         <tr>
                             <td class="header">Стойност на доставката:</td>
-                            <td class="headerValue">{{ delivery | number: '1.2-2' }} лв.</td>
+                            <td class="headerValue">{{ shippingPrice | number: '1.2-2' }} лв.</td>
                         </tr>
                         <tr>
                             <td style="padding-top: 45px" class="header">
                                 <h4>Обща сума:</h4>
                             </td>
                             <td style="padding-top: 45px" class="headerValue">
-                                <h4>{{ (total + delivery) | number: '1.2-2'}} лв.</h4>
+                                <h4>{{ (total + shippingPrice) | number: '1.2-2'}} лв.</h4>
                             </td>
                         </tr>
                         <tr>

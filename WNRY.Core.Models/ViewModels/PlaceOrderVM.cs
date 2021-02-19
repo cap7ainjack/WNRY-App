@@ -20,6 +20,8 @@ namespace WNRY.Models.ViewModels
 
         public string Description { get; set; }
 
+        public decimal Shipping { get; set; }
+
         public IEnumerable<OrderProductVm> Products { get; set; }
     }
 }
