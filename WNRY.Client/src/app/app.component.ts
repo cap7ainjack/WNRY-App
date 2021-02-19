@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { CartContent } from './shared/models/cart-content';
 
 @Component({
 	selector: 'app-root',
@@ -8,6 +9,10 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
 
 	title = 'app';
-
+	@HostListener("window:beforeunload", ["$event"])
+	clearLocalStorage(event) {
+		const cartContent = [];
+		localStorage.setItem('cart', JSON.stringify(cartContent));
+	}
 
 }

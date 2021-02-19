@@ -71,7 +71,8 @@ namespace WNRY.Core.Data
                 Price = 11m,
                 Description = "Description here...",
                 Id = new Guid("C51E8CE1-C6CC-4F08-86BD-E5016EFA00BF"),
-                DisplayName = "Мерло"
+                DisplayName = "Мерло",
+                Weight = 1.1
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -84,7 +85,8 @@ namespace WNRY.Core.Data
                 Price = 11m,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 Id = new Guid("FBDEB80E-8348-4233-99B7-0C79780398AA"),
-                DisplayName = "Каберне Совиньон"
+                DisplayName = "Каберне Совиньон",
+                Weight = 1.1
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -97,7 +99,8 @@ namespace WNRY.Core.Data
                 Price = 9m,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
                 Id = new Guid("32E90A4A-9955-42F6-B172-12296CDEE653"),
-                DisplayName = "Розе"
+                DisplayName = "Розе",
+                Weight = 1.1
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -110,7 +113,8 @@ namespace WNRY.Core.Data
                 Price = 9m,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
                 Id = new Guid("FF8FFE32-2E84-4C4F-9205-49794FBDF5B7"),
-                DisplayName = "Шардоне"
+                DisplayName = "Шардоне",
+                Weight = 1.1
             });
 
         }

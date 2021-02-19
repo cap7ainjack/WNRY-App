@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.subscription = this.userService.authNavStatus$.subscribe(status => this.status = status);
 
-		this.productsInCart = this.productService.getCartProductsCount();
+		this.productsInCart = this.productService.calcCartTotalItems();
 		this.productService.watchStorage().subscribe(count => {
 			if (count !== null && count !== undefined) {
 				this.productsInCart = count;

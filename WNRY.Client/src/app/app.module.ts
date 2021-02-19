@@ -19,6 +19,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 /* Shop Imports */
 import { ShopModule } from './shop/shop.module';
 
+import { ContactsComponent } from './contacts/contacts.component'
+
 import { ConfigService } from './shared/utils/config.service';
 
 /* angular material */
@@ -37,7 +39,8 @@ import { SharedModule } from './shared/modules/shared.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ContactsComponent
   ],
   imports: [
     AccountModule,
@@ -46,6 +49,7 @@ import { SharedModule } from './shared/modules/shared.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    
     routing,
 
     // angular mateial

@@ -83,32 +83,12 @@ export class CartComponent implements OnInit {
 	}
 
 	addProduct(id: string) {
-		let cart: any = JSON.parse(localStorage.getItem('cart'))
-		for (let i = 0; i < cart.length; i++) {
-			let item: CartItem = JSON.parse(cart[i]);
-			if (item.product.id === id) {
-				item.quantity += 1;
-				cart[i] = JSON.stringify(item);
-				break;
-			}
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
+		this.productService.addSameProduct(id);
 		this.loadCart();
 	}
 
 	substractProduct(id: string) {
-		let cart: any = JSON.parse(localStorage.getItem('cart'))
-		for (let i = 0; i < cart.length; i++) {
-			let item: CartItem = JSON.parse(cart[i]);
-			if (item.product.id === id) {
-				if (item.quantity > 1) {
-					item.quantity -= 1;
-					cart[i] = JSON.stringify(item);
-				}
-				break;
-			}
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
+		this.productService.substractSameProduct(id);
 		this.loadCart();
 	}
 }

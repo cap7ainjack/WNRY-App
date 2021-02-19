@@ -20,17 +20,6 @@ export class ProductService extends BaseService {
         this.baseUrl = configService.getApiURI();
     }
 
-    getCartProductsCount(): number {
-        let result = 0;
-        const cart = JSON.parse(localStorage.getItem('cart'));
-
-        if (cart && cart.length) {
-            result = cart.length;
-        }
-
-        return result;
-    }
-
     watchStorage(): Observable<any> {
         return this.storageCountSubj.asObservable();
     }
@@ -46,10 +35,44 @@ export class ProductService extends BaseService {
             }
         }
         localStorage.setItem('cart', JSON.stringify(cart));
-        this.storageCountSubj.next(cart.length);
+        this.storageCountSubj.next(this.calcCartTotalItems());
     }
 
-    addItemToCart(itemToAdd: CartItem) {
+    addSameProduct(id: string) {
+		let cart: any = JSON.parse(localStorage.getItem('cart'))
+		for (let i = 0; i < cart.length; i++) {
+			let item: CartItem = JSON.parse(cart[i]);
+			if (item.product.id === id) {
+				item.quantity += 1;
+				cart[i] = JSON.stringify(item);
+				break;
+			}
+		}
+		localStorage.setItem('cart', JSON.stringify(cart));
+
+        let totalItemsCount = this.calcCartTotalItems();
+        this.storageCountSubj.next(totalItemsCount);
+    }
+
+    substractSameProduct(id: string) {
+		let cart: any = JSON.parse(localStorage.getItem('cart'))
+		for (let i = 0; i < cart.length; i++) {
+			let item: CartItem = JSON.parse(cart[i]);
+			if (item.product.id === id) {
+				if (item.quantity > 1) {
+					item.quantity -= 1;
+					cart[i] = JSON.stringify(item);
+				}
+				break;
+			}
+		}
+		localStorage.setItem('cart', JSON.stringify(cart));
+
+        let totalItemsCount = this.calcCartTotalItems();
+        this.storageCountSubj.next(totalItemsCount);
+    }
+
+    addNewItemToCart(itemToAdd: CartItem) {
         let cart = [];
         if (itemToAdd) {
             if (localStorage.getItem('cart') == null) {
@@ -76,10 +99,23 @@ export class ProductService extends BaseService {
                 }
             }
         }
-        this.storageCountSubj.next(cart.length);
+
+        let totalItemsCount = this.calcCartTotalItems();
+        this.storageCountSubj.next(totalItemsCount);
     }
 
     loadProducts() {
-		return this.http.get(this.baseUrl + '/Products');
+        return this.http.get(this.baseUrl + '/Products');
+    }
+
+    calcCartTotalItems() {
+        let cartt = JSON.parse(localStorage.getItem('cart'));
+        let totalItemsCount = 0;
+        for (let i = 0; i < cartt.length; i++) {
+            let parsedItem: any = JSON.parse(cartt[i]);
+            totalItemsCount += parsedItem.quantity;
+        }
+
+        return totalItemsCount;
     }
 }

@@ -42,6 +42,11 @@ namespace WNRY.Services
                     Status = Models.Enums.OrderStatus.New,
                 };
 
+                if (!string.IsNullOrEmpty(vm.Password) && vm.Password.Length >= 6) // Create user
+                {
+
+                }
+
                 // In case of Guest
                 this.AddAddressObje(orderToInsert, vm);
                 this.AddContactDetails(orderToInsert, vm);
@@ -112,10 +117,12 @@ namespace WNRY.Services
                     string productTemplate = File.ReadAllText(htmlAddressTemplate);
 
                     StringBuilder addressSb = new StringBuilder();
+                    addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Име: " + vm.Name));
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", vm.Address.Region.Text));
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", vm.Address.City));
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", vm.Address.AddressLine));
                     addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Телефон: " + vm.Phone));
+                    addressSb.AppendLine(productTemplate.Replace("{{{AddressLine}}}", "Плащане: Наложен платеж"));
 
                     text = text.Replace("{{{address}}}", addressSb.ToString());
                 }
@@ -153,8 +160,8 @@ namespace WNRY.Services
                     OrderId = orderToInsert.Id,
                     ProductId = item.Id,
                     Quantity = item.Quantity,
-
                 };
+
                 this._dbContext.XRefOrderProducts.Add(toIns);
             }
         }

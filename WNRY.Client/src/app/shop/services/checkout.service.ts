@@ -39,7 +39,7 @@ export class CheckoutService extends BaseService {
 					id: item.product.id,
 					quantity: item.quantity
 				});
-				//	this.total += item.product.price * item.quantity;
+				// this.total += item.product.price * item.quantity;
 			}
 		}
 
@@ -47,7 +47,7 @@ export class CheckoutService extends BaseService {
 	}
 
 	loadCart(): CartContent {
-		const cartContent: CartContent = { items: [], total: 0 };
+		const cartContent: CartContent = { items: [], total: 0, weight: 0 };
 		cartContent.total = 0;
 		cartContent.items = [];
 
@@ -58,12 +58,28 @@ export class CheckoutService extends BaseService {
 				let item = JSON.parse(cart[i]);
 				cartContent.items.push({
 					product: item.product,
-					quantity: item.quantity
+					quantity: item.quantity,
 				});
 				cartContent.total += item.product.price * item.quantity;
+				cartContent.weight += item.weight;
 			}
 		}
 
 		return cartContent;
+	}
+
+	calculateShipping(weight: number, itemsCount: number) {
+		let calcWeight = itemsCount * 0.7;
+		console.log(calcWeight);
+
+		if (calcWeight <= 2) {
+			return 10;
+		} else if (calcWeight > 2 && calcWeight <= 5) {
+			return 12;
+		} else if(calcWeight > 5 && calcWeight <= 10){
+			return 15;
+		}
+
+		return 10;
 	}
 }

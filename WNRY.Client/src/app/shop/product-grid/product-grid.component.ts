@@ -52,7 +52,7 @@ export class ProductGridComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe((itemToAdd: CartItem) => { // TODO: Clear local storage cart item at some point
 			if (itemToAdd) {
-				this.productService.addItemToCart(itemToAdd);
+				this.productService.addNewItemToCart(itemToAdd);
 			}
 		});
 	}

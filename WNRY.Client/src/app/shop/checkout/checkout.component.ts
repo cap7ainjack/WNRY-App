@@ -8,6 +8,7 @@ import { CheckoutService } from '../services/checkout.service';
 import { FormsHelperService } from '../../shared/services/forms.helper.service';
 import { UserService } from '../../shared/services/user.service';
 import { TextAndValueBox } from '../../shared/models';
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
 	selector: 'checkout',
@@ -31,6 +32,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		fb: FormBuilder,
 		private service: CheckoutService,
 		private userService: UserService,
+		private productsService: ProductService,
 		private router: Router,
 		private formHelper: FormsHelperService) {
 		this.form = fb.group({ // TODO: Interface
@@ -81,6 +83,9 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 		const cartContent = this.service.loadCart();
 		if (cartContent && cartContent.total > 0) {
 			this.total = cartContent.total;
+			console.log(cartContent.items);
+			let totalItems = this.productsService.calcCartTotalItems();
+			this.delivery = this.service.calculateShipping(cartContent.weight, totalItems);
 		}
 		// this.form.controls['country'].patchValue('България')
 	}

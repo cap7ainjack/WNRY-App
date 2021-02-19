@@ -23,6 +23,8 @@ namespace WNRY.Models.CommonModels
         [Required]
         public BottleKind BottleKind { get; set; }
 
+        public double Weight { get; set; }
+
         [Required]
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Price { get; set; }
