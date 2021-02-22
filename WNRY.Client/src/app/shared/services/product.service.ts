@@ -39,34 +39,34 @@ export class ProductService extends BaseService {
     }
 
     addSameProduct(id: string) {
-		let cart: any = JSON.parse(localStorage.getItem('cart'))
-		for (let i = 0; i < cart.length; i++) {
-			let item: CartItem = JSON.parse(cart[i]);
-			if (item.product.id === id) {
-				item.quantity += 1;
-				cart[i] = JSON.stringify(item);
-				break;
-			}
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
+        let cart: any = JSON.parse(localStorage.getItem('cart'))
+        for (let i = 0; i < cart.length; i++) {
+            let item: CartItem = JSON.parse(cart[i]);
+            if (item.product.id === id) {
+                item.quantity += 1;
+                cart[i] = JSON.stringify(item);
+                break;
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
 
         let totalItemsCount = this.calcCartTotalItems();
         this.storageCountSubj.next(totalItemsCount);
     }
 
     substractSameProduct(id: string) {
-		let cart: any = JSON.parse(localStorage.getItem('cart'))
-		for (let i = 0; i < cart.length; i++) {
-			let item: CartItem = JSON.parse(cart[i]);
-			if (item.product.id === id) {
-				if (item.quantity > 1) {
-					item.quantity -= 1;
-					cart[i] = JSON.stringify(item);
-				}
-				break;
-			}
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
+        let cart: any = JSON.parse(localStorage.getItem('cart'))
+        for (let i = 0; i < cart.length; i++) {
+            let item: CartItem = JSON.parse(cart[i]);
+            if (item.product.id === id) {
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                    cart[i] = JSON.stringify(item);
+                }
+                break;
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
 
         let totalItemsCount = this.calcCartTotalItems();
         this.storageCountSubj.next(totalItemsCount);
@@ -117,5 +117,11 @@ export class ProductService extends BaseService {
         }
 
         return totalItemsCount;
+    }
+
+
+    clearShoppingCart(){
+        const cartContent = [];
+		localStorage.setItem('cart', JSON.stringify(cartContent));
     }
 }

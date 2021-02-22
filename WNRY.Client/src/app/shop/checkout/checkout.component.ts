@@ -116,6 +116,7 @@ export class CheckoutComponent implements OnInit, ControlValueAccessor {
 				.subscribe(
 					result => {
 						console.log(result);
+						this.productsService.clearShoppingCart();
 						this.router.navigateByUrl('/complete');
 					},
 					error => {

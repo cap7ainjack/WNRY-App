@@ -1,18 +1,18 @@
 <div [class]="navClass" id="mainNav">
 
-  <button mat-icon-button [matMenuTriggerFor]="menu" style="float:right; top:10px;">
+<!--   <button mat-icon-button [matMenuTriggerFor]="menu" style="float:right; top:10px;">
     <mat-icon>account_circle</mat-icon>
-  </button>
+  </button> -->
 
-  <button mat-icon-button href="#" routerLinkActive="active" routerLink="/cart" style="float:right; top:10px;">
+  <button mat-icon-button href="#" routerLinkActive="active" routerLink="/cart" style="float:right; top:10px;right: 5px;">
     <mat-icon [matBadge]="productsInCart" matBadgeColor="accent">shopping_cart</mat-icon>
   </button>
 
-  <mat-menu #menu="matMenu" [overlapTrigger]="false">
+<!--   <mat-menu #menu="matMenu" [overlapTrigger]="false">
     <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/login">Вход</a>
     <a *ngIf="!status" mat-menu-item href="#" routerLinkActive="active" routerLink="/register">Регистрация</a>
     <button mat-menu-item *ngIf="status" class="mat-button" (click)="logout()">Изход</button>
-  </mat-menu>
+  </mat-menu> -->
 
   <a href="javascript:void(0);" style="font-size:15px" class="icon" (click)="burgerMenu($event)">&#9776;</a>
   <ul>

@@ -58,7 +58,8 @@ import { SharedModule } from './shared/modules/shared.module';
     MatIconModule,
     MatSidenavModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    SharedModule
   ],
   providers: [ConfigService, {
     provide: XHRBackend,
