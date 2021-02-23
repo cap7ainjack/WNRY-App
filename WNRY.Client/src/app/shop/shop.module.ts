@@ -33,6 +33,9 @@ import { CartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CheckoutService } from './services/checkout.service';
 import { ProductService } from '../shared/services/product.service';
+
+import { LayoutService } from '../shared/services/layout.service';
+
 import { FormsHelperService } from '../shared/services/forms.helper.service';
 import { CompletedOrderComponent } from './completed-order/completed-order.component';
 
@@ -65,7 +68,7 @@ import { CompletedOrderComponent } from './completed-order/completed-order.compo
 		/* RootComponent, HomeComponent, SettingsComponent */
 	],
 	exports: [],
-	providers: [CheckoutService, ProductService, FormsHelperService],
+	providers: [CheckoutService, ProductService, FormsHelperService, LayoutService],
 	entryComponents: [BuyProductDialogComponent]
 })
 export class ShopModule { }
