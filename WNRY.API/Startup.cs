@@ -1,19 +1,19 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Hosting;
+
 using System;
 using System.Net;
 using System.Text;
+
 using WNRY.API.Utils;
 using WNRY.Core.Data;
 using WNRY.Models.IdentityModels;
@@ -24,6 +24,7 @@ using WNRY.Services.Interfaces;
 using WNRY.Services;
 using WNRY.Utils.MailKit;
 using WNRY.Utils.MailKit.Models;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace WNRY.API
 {
@@ -49,8 +50,7 @@ namespace WNRY.API
             });
 
 
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddRazorPages();
 
             // Add framework services.
             services.AddDbContext<WnryDbContext>(options =>
@@ -149,7 +149,7 @@ namespace WNRY.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -182,7 +182,15 @@ namespace WNRY.API
             app.UseAuthentication();
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseMvc();
+
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                // endpoints.MapControllers();
+                endpoints.MapRazorPages();
+            });
 
             AutoMapper.Mapper.Initialize(cfg =>
             {

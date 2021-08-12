@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Threading.Tasks;
 using WNRY.Models.CommonModels;
 
 namespace WNRY.Core.Data.Interfaces
 {
     public interface IAddressesRepository
     {
-        Task AddAsync(Address entity);
+        ValueTask<EntityEntry<Address>> AddAsync(Address entity);
 
         Task<int> SaveChangesAsync();
 

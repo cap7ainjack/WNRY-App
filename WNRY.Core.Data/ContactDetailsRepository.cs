@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +21,7 @@ namespace WNRY.Core.Data
 
         protected WnryDbContext Context { get; set; }
         
-        public virtual Task AddAsync(ContactDetails entity) => this.DbSet.AddAsync(entity);
+        public virtual ValueTask<EntityEntry<ContactDetails>> AddAsync(ContactDetails entity) => this.DbSet.AddAsync(entity);
 
         public virtual void Update(ContactDetails entity)
         {
@@ -36,5 +37,6 @@ namespace WNRY.Core.Data
         public Task<int> SaveChangesAsync() => this.Context.SaveChangesAsync();
 
         public void Dispose() => this.Context.Dispose();
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace WNRY.Core.Data.Interfaces
 
         IQueryable<TEntity> AllAsNoTracking();
 
-        Task AddAsync(TEntity entity);
+        ValueTask<EntityEntry<TEntity>> AddAsync(TEntity entity);
 
         void Update(TEntity entity);
 

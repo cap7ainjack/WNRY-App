@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-	<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,10 +10,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
-    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.CookiePolicy" Version="2.2.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WNRY.Core.Migrations\WNRY.Migrations.csproj" />
-    <ProjectReference Include="..\WNRY.Core.Models\WNRY.Models.csproj" />
+    <ProjectReference Include="..\WNRY.Models.All\WNRY.Models.All.csproj" />
     <ProjectReference Include="..\WNRY.Services\WNRY.Services.csproj" />
     <ProjectReference Include="..\WNRY.Utils\WNRY.Utils.csproj" />
   </ItemGroup>

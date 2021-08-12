@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +21,7 @@ namespace WNRY.Core.Data
 
         protected WnryDbContext Context { get; set; }
 
-        public virtual Task AddAsync(Address entity) => this.DbSet.AddAsync(entity);
+        public virtual ValueTask<EntityEntry<Address>> AddAsync(Address entity) => this.DbSet.AddAsync(entity);
 
         public virtual void Update(Address entity)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace WNRY.Core.Data.Interfaces
 {
     public interface IContactDetailsRepository: IDisposable
     {
-        Task AddAsync(ContactDetails entity);
+        ValueTask<EntityEntry<ContactDetails>> AddAsync(ContactDetails entity);
 
         void Update(ContactDetails entity);
 

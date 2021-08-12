@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.API", "WNRY.API\WNRY.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Migrations", "WNRY.Core.Migrations\WNRY.Migrations.csproj", "{F01BEE8F-AF30-4117-93D8-3386C4D9E2BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Models", "WNRY.Core.Models\WNRY.Models.csproj", "{CDA0EDDD-CD64-4094-8181-8396C4327F92}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Services", "WNRY.Services\WNRY.Services.csproj", "{60A747FE-B2D1-4440-8242-7240DD91FA9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNRY.Utils", "WNRY.Utils\WNRY.Utils.csproj", "{BBC2FC10-6181-4940-A15E-FD3C869B8098}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WNRY.Utils", "WNRY.Utils\WNRY.Utils.csproj", "{BBC2FC10-6181-4940-A15E-FD3C869B8098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNRY.Models.All", "WNRY.Models.All\WNRY.Models.All.csproj", "{F800D95B-82E2-4983-BF14-4267852DFF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{F01BEE8F-AF30-4117-93D8-3386C4D9E2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01BEE8F-AF30-4117-93D8-3386C4D9E2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01BEE8F-AF30-4117-93D8-3386C4D9E2BE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDA0EDDD-CD64-4094-8181-8396C4327F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDA0EDDD-CD64-4094-8181-8396C4327F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDA0EDDD-CD64-4094-8181-8396C4327F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDA0EDDD-CD64-4094-8181-8396C4327F92}.Release|Any CPU.Build.0 = Release|Any CPU
 		{60A747FE-B2D1-4440-8242-7240DD91FA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60A747FE-B2D1-4440-8242-7240DD91FA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60A747FE-B2D1-4440-8242-7240DD91FA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBC2FC10-6181-4940-A15E-FD3C869B8098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F800D95B-82E2-4983-BF14-4267852DFF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F800D95B-82E2-4983-BF14-4267852DFF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F800D95B-82E2-4983-BF14-4267852DFF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F800D95B-82E2-4983-BF14-4267852DFF38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

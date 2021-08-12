@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using WNRY.Core.Data.Interfaces;
 
 namespace WNRY.Core.Data
@@ -24,7 +25,7 @@ namespace WNRY.Core.Data
 
         public virtual IQueryable<TEntity> AllAsNoTracking() => this.DbSet.AsNoTracking();
 
-        public virtual Task AddAsync(TEntity entity) => this.DbSet.AddAsync(entity);
+        public virtual ValueTask<EntityEntry<TEntity>> AddAsync(TEntity entity) => this.DbSet.AddAsync(entity);
 
         public virtual void Update(TEntity entity)
         {
